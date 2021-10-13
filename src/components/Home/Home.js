@@ -6,8 +6,8 @@ return (
 	<div className='home'>
 
     <div className='landingBtn'>
-      <Link to="/rlgl" class>Start</Link>
-      <Link to="/rank" class>Rank</Link>
+      <Link to="/game/rlgl">Start</Link>
+      <Link to="/rank">Rank</Link>
     </div>
 	</div>
 );

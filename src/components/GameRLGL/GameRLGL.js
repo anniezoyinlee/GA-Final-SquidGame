@@ -1,20 +1,13 @@
-import { 
-    BrowserRouter as Router, 
-    Route, 
-    Link 
-  } from 'react-router-dom'
-  // import Game from './components/Game/Game';
-  import Rank from '../Rank/Rank';
+import React from 'react'
+import Caption from '../Caption/Caption';
   
   function GameRLGL() {
+    let title = "Red Light, Green Light"
+    let rules = "Click on the green pieces to make them move, only move when it's green light"
+
     return (
-      <div className="GameRLGL">
-        <Router>
-          {/* <Link to="/game/rlgl" class>Next Game</Link> */}
-          <Link to="/rank" class>Rank</Link>
-          {/* <Route path="/game/rlgl" component={RLGL}/> */}
-          <Route path="/rank" component={Rank}/>
-        </Router>
+      <div className="game_rlgl">
+        <Caption title={title} rules={rules} />
       </div>
     );
   }

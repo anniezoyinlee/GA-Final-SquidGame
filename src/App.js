@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import Home from './components/Home/Home'
 import Rank from './components/Rank/Rank'
-import GameRLGL from './components/GameRLGL/GameRLGL'
+import Game from './components/Game/Game'
 import './App.css';
 
 function App() {
@@ -13,7 +13,7 @@ return (
 
     {/* Setting route to each pages */}
     <main>
-      <Route path="/game/rlgl" component={GameRLGL}/>
+      <Route path="/game" component={Game}/>
       <Route path="/rank" component={Rank}/>
       <Route exact path="/" component={Home}/>
     </main>

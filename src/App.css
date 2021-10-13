@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=swap');
 
 * {
   border: solid 1px gold;
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+}
+
+img {
+  max-width: 800px;
+  max-height: 600px;
 }
 
 .window {
@@ -22,8 +27,6 @@
   justify-content: flex-end;
   background-image: url("./images/LandingPage_background.png");
   background-size: cover;
-  font-size: 3.5em;
-  text-align: center;
 }
 
 .landingBtn {
@@ -34,9 +37,42 @@
 
 .landingBtn a {
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 4vw;
+  font-weight: bolder;
 }
 
 .landingBtn a:hover {
-  opacity: .8;
+  opacity: .7;
+}
+
+/* Game */
+.game_window {
+  width: 100%;
+  height: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url("./images/Game_background.png");
+  background-size: cover;
+}
+
+.caption {
+  transform: rotate(-10deg);
+  width: 30%;
+  position: absolute;
+  left: 700px;
+  top: 120px;
+  letter-spacing: .05em;
+}
+
+.caption h1 {
+  color: #F44788;
+  margin: 0;
+}
+
+.caption p {
+  margin: 1% 0;
+  font-size: 1.1em;
+  font-weight: 700;
 }
