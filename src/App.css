@@ -1,11 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 * {
   border: solid 1px gold;
+  font-family: 'Russo One', sans-serif;
 }
 
 .window {
-  width: 65%;
-  height: 40vw;
-  border: magenta 5px solid;
+  width: 60%;
+  height: 45vw;
+  border: rgba(194, 194, 194, 0.35) 5px solid;
   border-radius: 5px;
-  margin: 5% auto;
+  margin: 2% auto;
+}
+
+/* Home/Landing Page */
+.home {
+  width: 100%;
+  height: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url("./images/LandingPage_background.png");
+  background-size: cover;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.landingBtn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10%;
+}
+
+.landingBtn a {
+  text-decoration: none;
+  color: white;
+}
+
+.landingBtn a:hover {
+  opacity: .8;
 }

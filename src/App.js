@@ -8,7 +8,7 @@ import './App.css';
 function App() {
 return (
 	<div className='window'>
-    <h1>Home</h1>
+    
 
 
     {/* Setting route to each pages */}

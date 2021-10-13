@@ -1,20 +1,14 @@
 import React from 'react'
-import { 
-  BrowserRouter as Router, 
-  Route, 
-  Link
-} from 'react-router-dom'
-import GameRLGL from '../GameRLGL/GameRLGL';
-import Rank from '../Rank/Rank';
+import { Link } from 'react-router-dom'
 
 function Home() {
 return (
-	<div className='Home'>
-    
+	<div className='home'>
 
-    <Link to="/rlgl" class>Start</Link>
-    <Link to="/rank" class>Rank</Link>
-
+    <div className='landingBtn'>
+      <Link to="/rlgl" class>Start</Link>
+      <Link to="/rank" class>Rank</Link>
+    </div>
 	</div>
 );
 }
