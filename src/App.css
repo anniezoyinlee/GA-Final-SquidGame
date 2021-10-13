@@ -1,0 +1,11 @@
+* {
+  border: solid 1px gold;
+}
+
+.window {
+  width: 65%;
+  height: 40vw;
+  border: magenta 5px solid;
+  border-radius: 5px;
+  margin: 5% auto;
+}
