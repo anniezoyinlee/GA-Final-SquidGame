@@ -148,8 +148,43 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-image: url("./images/Dalgona-background.png");
+  background-image: url("./images/Game_background.png");
   background-size: cover;
-  position:relative;
+  position: relative;
   z-index: -1;
 }
+
+.candy {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 285px;
+    top: 310px;
+    background-color: rgb(250, 195, 120);
+    border-radius: 150px;
+    z-index: 10;
+  }
+
+  /* reference https://stackoverflow.com/questions/7073484/how-do-css-triangles-work */
+  .triangleLine {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 45px;
+    left: 60px;
+    border-style: solid;
+    border-width: 0 90px 180px 90px;
+    border-color: transparent transparent rgba(0, 0, 0, 0.4) transparent;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 6px;
+    left: -85px;
+    border-style: solid;
+    border-width: 0 85px 170px 85px;
+    border-color: transparent transparent rgb(250, 196, 120) transparent;
+  }
+  

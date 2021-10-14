@@ -41,6 +41,7 @@ function Game() {
           </div>
         </div>
       } />
+      
       <main>
         {/* Setting route to each pages */}
         <Route path='/game/rlgl' component={RLGL} />
