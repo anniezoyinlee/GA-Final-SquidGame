@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
 // reference: https://www.codegrepper.com/code-examples/javascript/react+countdown+timer+minutes+seconds
-const Timer = () => {
-  const initialMinute = 0
-  const initialSeconds = 5
+const Timer = ({min, sec}) => {
+  const initialMinute = min
+  const initialSeconds = sec
   const [ minutes, setMinutes ] = useState(initialMinute);
   const [ seconds, setSeconds ] =  useState(initialSeconds);
 
@@ -27,12 +27,12 @@ const Timer = () => {
   });
 
   return (
-      <div className='timer'>
+    <div className='timer'>
       { minutes === 0 && seconds === 0
-          ? <h1>00:00</h1> 
-          : <h1>{minutes < 10 ?  `0${minutes}` : minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+        ? <h1>00:00</h1> 
+        : <h1>{minutes < 10 ?  `0${minutes}` : minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
       }
-      </div>
+    </div>
   )
 }
 
