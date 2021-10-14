@@ -94,8 +94,9 @@ img {
 /* Timer */
 .timer {
   position: absolute;
-  top: -480px;
-  left: 166px;
+  top: -500px;
+  left: 140px;
   color: rgb(255, 175, 175);
-  font-size: 2em;
+  font-size: 0.9em;
+  letter-spacing: .1em;
 }
