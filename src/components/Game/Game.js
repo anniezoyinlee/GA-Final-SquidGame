@@ -5,7 +5,7 @@ import GameRLGL from '../GameRLGL/GameRLGL'
   function Game() {
 
     return (
-      <div className="game_window">
+      <div className="gameContainer">
         <Route path='/game/rlgl' render={() => 
           <GameRLGL />
         } />

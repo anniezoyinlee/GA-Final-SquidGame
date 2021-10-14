@@ -47,7 +47,7 @@ img {
 }
 
 /* Game */
-.game_window {
+.gameContainer {
   width: 100%;
   height: 45vw;
   display: flex;
@@ -59,10 +59,10 @@ img {
 
 .caption {
   transform: rotate(-10deg);
-  width: 30%;
+  width: 50%;
   position: absolute;
-  left: 700px;
-  top: 120px;
+  left: 400px;
+  top: -560px;
   letter-spacing: .05em;
 }
 
@@ -75,4 +75,27 @@ img {
   margin: 1% 0;
   font-size: 1.1em;
   font-weight: 700;
+}
+
+/* Red Light, Green Light */
+.gameRLGL {
+  position:relative;
+}
+
+.ground {
+  border-right: rgba(255, 0, 111, 0.6) solid 5px;
+  width: 75%;
+  height: 25vw;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+/* Timer */
+.timer {
+  position: absolute;
+  top: -480px;
+  left: 166px;
+  color: rgb(255, 175, 175);
+  font-size: 2em;
 }
