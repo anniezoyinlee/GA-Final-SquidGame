@@ -8,7 +8,7 @@ import Dalgona from '../Dalgona/Dalgona'
 
 function Game() {
   let titleDalgona = "Dalgona Candy"
-  let rulesDalgona = "Click on all the dots to make the shape out"
+  let rulesDalgona = "Click along the line to make the shape out"
   let titleRLGL = "Red Light, Green Light"
   let rulesRLGL = "Click on the green pieces to make them move, only move when it's green light"
   let minute = 0
@@ -44,8 +44,8 @@ function Game() {
       
       <main>
         {/* Setting route to each pages */}
-        <Route path='/game/rlgl' component={RLGL} />
-        <Route path='/game/dalgona' component={Dalgona} />
+        <Route exact path='/game/rlgl' component={RLGL} />
+        <Route exact path='/game/dalgona' component={Dalgona} />
       </main>
 
     </div>
