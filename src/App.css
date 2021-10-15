@@ -12,8 +12,10 @@ img {
 
 button {
   background-color: white;
+  border: 0;
   color:rgba(255, 0, 140, 0.905);
   font-size: 1em;
+  margin-right: 1%;
 }
 
 button:hover {

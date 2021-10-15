@@ -1,0 +1,47 @@
+/* Marbles */
+* {
+  border: gold 1px solid;
+}
+
+.marbles {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 25vw;
+}
+
+.evenBtn,
+.oddBtn {
+  height: 10vw;
+  font-size: 1.5em;
+  margin: 10%;
+}
+
+.hand {
+  height: 60%;
+  width: 60%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handImg {
+  background-image: url('../../../images/hand.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+h1.questionMark,
+h1.marbleAmount {
+  color: rgb(255, 0, 140);
+  font-size: 5em;
+  position: absolute;
+  left: 1.2em;
+  top: 0.5em;
+}
