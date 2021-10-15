@@ -1,8 +1,4 @@
 /* Marbles */
-* {
-  border: gold 1px solid;
-}
-
 .marbles {
   position: relative;
   display: flex;

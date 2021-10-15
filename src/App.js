@@ -11,8 +11,9 @@ return (
     
     {/* Setting route to each pages */}
     <Route path="/game" component={Game}/>
-    <Route path="/rank" component={Rank}/>
+    <Route exact path="/rank" component={Rank}/>
     <Route exact path="/" component={Home}/>
+
 	</div>
 );
 }

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 function Home() {
 return (
 	<div className='home'>
-
     <div className='landingBtn'>
       <Link to="/game/rlgl">Start</Link>
       <Link to="/rank">Rank</Link>
