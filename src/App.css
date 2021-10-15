@@ -69,8 +69,8 @@ img {
   transform: rotate(-10deg);
   width: 30%;
   position: absolute;
-  left: 700px;
-  top: 100px;
+  left: 48%;
+  top: 15%;
   letter-spacing: .05em;
   text-align: center;
 }
@@ -78,6 +78,7 @@ img {
 .caption h1 {
   color: #F44788;
   margin: 0;
+  font-size: 2em;
 }
 
 .caption p {
@@ -89,7 +90,7 @@ img {
 /* Timer */
 .timer {
   position: absolute;
-  top: 37%;
+  top: 25%;
   left: 29.8%;
   color: rgb(255, 175, 175);
   font-size: 0.9em;

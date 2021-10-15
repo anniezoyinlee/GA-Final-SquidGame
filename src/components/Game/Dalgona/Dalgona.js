@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState }  from 'react'
+// import Life from '../Life/Life'
 import './Dalgona.css';
   
 function Dalgona() {
+  const [life, setLife] = useState(456);
 
   return (
     <div className="dalgona">
-  
+      <div className='life'>Life: {life}</div>
       <div className='candy' onClick={(e) => {
-        e.stopPropagation();
-        console.log('die') 
+        e.stopPropagation()
+        setLife(life - 1)
         }}>
       </div>
       <ul className="circleLine">
@@ -87,10 +89,9 @@ function Dalgona() {
         </li>
       </ul>
       <div className='circleShape' onClick={(e) => {
-          e.stopPropagation();
-          console.log('die') 
+        e.stopPropagation()
+        setLife(life - 1)
       }}></div>
-
     </div>
   );
 }

@@ -4,6 +4,17 @@
   top: 50px;
 }
 
+/* Life */
+.life {
+  position: absolute;
+  width: 10vw;
+  left: 8vw;
+  top: 17vw;
+  text-align: center;
+  color: rgb(220, 38, 138);
+  font-weight: 900;
+}
+
 .candy {
   width: 300px;
   height: 300px;
