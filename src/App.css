@@ -10,6 +10,27 @@ img {
   max-height: 600px;
 }
 
+button {
+  background-color: white;
+  color:rgba(255, 0, 140, 0.905);
+  font-size: 1em;
+}
+
+button:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color:rgba(255, 0, 140, 0.905);
+  font-size: 1em;
+}
+
+a:hover {
+  opacity: .7;
+}
+
 .window {
   width: 60%;
   height: 45vw;
@@ -40,7 +61,6 @@ img {
 }
 
 .landingBtn a {
-  text-decoration: none;
   color: rgba(255, 255, 255, 0.95);
   font-size: 4vw;
   font-weight: bolder;

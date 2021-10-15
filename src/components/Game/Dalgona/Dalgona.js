@@ -96,10 +96,10 @@ function Dalgona() {
   );
 }
   
-  export default Dalgona;
-  
-  // make onclick functions, user click on each of lines will change style
-  // when all the lines are clicked, finish the game
-  // click out of the line on the candy would lose lives
-  // timer 
+export default Dalgona;
+
+// make onclick functions, user click on each of lines will change style
+// when all the lines are clicked, finish the game
+// click out of the line on the candy would lose lives
+// timer 
 
