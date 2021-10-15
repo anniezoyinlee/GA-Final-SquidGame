@@ -9,14 +9,10 @@ function App() {
 return (
 	<div className='window'>
     
-
-
     {/* Setting route to each pages */}
-    <main>
-      <Route path="/game" component={Game}/>
-      <Route path="/rank" component={Rank}/>
-      <Route exact path="/" component={Home}/>
-    </main>
+    <Route path="/game" component={Game}/>
+    <Route path="/rank" component={Rank}/>
+    <Route exact path="/" component={Home}/>
 	</div>
 );
 }

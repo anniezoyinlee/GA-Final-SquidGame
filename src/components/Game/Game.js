@@ -53,7 +53,7 @@ function Game() {
         </div>
       } />
       
-      <main>
+      <main className='gameArea'>
         {/* Setting route to each pages */}
         <Route exact path='/game/rlgl' component={RLGL} />
         <Route exact path='/game/dalgona' component={Dalgona} />

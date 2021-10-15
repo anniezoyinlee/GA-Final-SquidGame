@@ -1,12 +1,31 @@
 import React from 'react'
-
+import './Tow.css';
 
 function ToW() {
 
 
   return (
-    <div className="gameContainer tow">
+    <div className="tow">
+      <div className='button'>
+        <button className='pullBtn'>Pull</button>
+      </div>
 
+      <div className='view'>
+        <div className='platform left'>
+          <div className='top'>
+            <div className='player'>001</div>
+            <div className='player'>002</div>
+          </div>
+          <div className='bottom'></div>
+        </div>
+
+        <div className='middle'></div>
+        
+        <div className='platform right'>
+          <div className='top'></div>
+          <div className='bottom'></div>
+        </div>
+      </div>
     </div>
   );
 }

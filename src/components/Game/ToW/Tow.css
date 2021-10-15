@@ -1,0 +1,77 @@
+/* Tog of War */
+* {
+  border: 1px gold solid
+}
+.tow {
+  position: relative;
+  height: 25vw;
+  display: flex;
+  flex-direction: column; 
+}
+
+.button {
+  height: 10vw;
+}
+
+.pullBtn{
+  position: absolute;
+  left: 30%;
+  top: 15%;
+  border: rgb(255, 0, 100) 5px solid;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 0, 100) ;
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 1%;
+}
+
+.pullBtn:hover {
+  opacity: .6;
+}
+
+.view {
+  display: flex;
+  height: 15vw;
+  position: relative;
+  flex-direction: row; 
+}
+
+.platform {
+  width: 40%;
+  height: 15vw;
+}
+
+.top {
+  background-color: rgba(90, 100, 90, .7);
+  height: 5vw;
+  border-top: rgba(255, 200, 0, .9) 20px solid;
+  border-bottom: rgba(255, 200, 0, 0.9) 5px solid;
+  display: flex;
+  flex-direction: row;
+}
+
+.top .player {
+  margin: 1%;
+}
+
+.bottom {
+  background-color: rgba(90, 100, 90, .7);
+  height: 5vw;
+  border-top: rgba(255, 200, 0, .9) 5px solid;
+  border-bottom: rgba(255, 200, 0, .9) 20px solid;
+}
+
+.left {
+  margin-right: 10%;
+}
+
+.right {
+  margin-left: 10%;
+}
+
+.middle {
+  border: 2px rgba(255, 0, 0, 0.7) solid;
+  height: 16vw;
+  margin-top: -2%;
+}
