@@ -7,15 +7,18 @@ function Dalgona() {
     <div className="gameContainer dalgona">
   
 
-      <div className='candy' onClick={() => console.log('circle')}>
+      <div className='candy' onClick={(e) => {
+            e.stopPropagation();
+            console.log('die') 
+        }}>
         
       </div>
         <ul className="circleLine">
           <li>
             <div className="slice" onClick={(e) => {
             e.stopPropagation();
+            console.log('1') 
             console.log(e.currentTarget)
-            e.currentTarget.style.color = 'blue'
           }}></div>
           </li>
           <li>
@@ -96,5 +99,8 @@ function Dalgona() {
   
   export default Dalgona;
   
-  // make divs to have 
+  // make onclick functions, user click on each of lines will change style
+  // when all the lines are clicked, finish the game
+  // click out of the line on the candy would lose lives
+  // timer 
 

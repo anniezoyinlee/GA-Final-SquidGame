@@ -1,16 +1,18 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import Caption from '../Caption/Caption';
-import Timer from '../Timer/Timer';
-import RLGL from '../RLGL/RLGL'
-import Dalgona from '../Dalgona/Dalgona'
-
+import Caption from './Caption/Caption';
+import Timer from './Timer/Timer';
+import RLGL from './RLGL/RLGL'
+import Dalgona from './Dalgona/Dalgona'
+import ToW from './ToW/ToW'
 
 function Game() {
   let titleDalgona = "Dalgona Candy"
   let rulesDalgona = "Click along the line to make the shape out"
   let titleRLGL = "Red Light, Green Light"
   let rulesRLGL = "Click on the green pieces to make them move, only move when it's green light"
+  let titleToW = "Tug of War"
+  let rulesToW = "Click the button to pull"
   let minute = 0
   let second = 0
   let start = true
@@ -41,11 +43,21 @@ function Game() {
           </div>
         </div>
       } />
+      <Route path='/game/tow' render={() => 
+        <div className='screen'>
+          <Timer min={minute} sec={second} />
+          <Caption title={titleToW} rules={rulesToW} />
+          <div className='startBtn'>
+            <button onClick={handleStart}>Start</button>
+          </div>
+        </div>
+      } />
       
       <main>
         {/* Setting route to each pages */}
         <Route exact path='/game/rlgl' component={RLGL} />
         <Route exact path='/game/dalgona' component={Dalgona} />
+        <Route exact path='/game/tow' component={ToW} />
       </main>
 
     </div>
