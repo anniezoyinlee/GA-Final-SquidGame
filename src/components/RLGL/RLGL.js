@@ -1,24 +1,11 @@
 import React from 'react'
-import Caption from '../Caption/Caption';
-import Timer from '../Timer/Timer';
-  
-function GameRLGL() {
-  let title = "Red Light, Green Light"
-  let rules = "Click on the green pieces to make them move, only move when it's green light"
-  let minute = 0
-  let second = 0
-  let start = true
 
-  function handleStart() {
-    console.log(start)
-    start = false
-    console.log(start)
-  }
+  
+function RLGL() {
+
 
   return (
-    <div className="gameRLGL">
-      <Caption title={title} rules={rules} />
-      <Timer min={minute} sec={second} />
+    <div className="gameContainer rlgl">
 
       <div className='playWindow-left'>
         <div className='ground'>
@@ -28,13 +15,10 @@ function GameRLGL() {
 
         <div className='playWindow-right'>
           <div className='lightSign'>
-            { start
+            { 3>2
               ? <h1 className='redlight'>Red Light</h1>
               : <h1 className='greenlight'>Green Light</h1> 
             }
-          </div>
-          <div className='startBtn'>
-            <button onClick={handleStart}>Start</button>
           </div>
         </div>
 
@@ -43,7 +27,7 @@ function GameRLGL() {
   );
 }
   
-  export default GameRLGL;
+  export default RLGL;
   
   // create one green piece 
   // create red/green light sign
