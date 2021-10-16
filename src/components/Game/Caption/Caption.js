@@ -1,4 +1,5 @@
 import React from 'react'
+import './Caption.css'
   
   function Caption({title, rules}) {
     return (

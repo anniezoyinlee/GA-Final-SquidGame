@@ -92,29 +92,6 @@ a:hover {
   left: 0;
 }
 
-/* Caption */
-.caption {
-  transform: rotate(-10deg);
-  width: 36%;
-  position: absolute;
-  left: 44%;
-  top: 15%;
-  letter-spacing: .05em;
-  text-align: left;
-}
-
-.caption h1 {
-  color: #F44788;
-  margin: 0;
-  font-size: 2em;
-}
-
-.caption p {
-  margin: 1% 0;
-  font-size: 1.1em;
-  font-weight: 700;
-}
-
 .gameArea {
   height: 25vw;
 }

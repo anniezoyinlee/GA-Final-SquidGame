@@ -1,0 +1,23 @@
+/* Caption */
+.caption {
+  position: relative;
+  transform: rotate(-10deg);
+  width: 60%;
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  letter-spacing: .05em;
+  text-align: left;
+}
+
+.caption h1 {
+  color: #F44788;
+  margin: 0;
+  font-size: 2vw;
+}
+
+.caption p {
+  margin: 1% 0;
+  font-size: 1.1vw;
+  font-weight: 700;
+}
