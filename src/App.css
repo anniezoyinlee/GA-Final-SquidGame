@@ -71,9 +71,6 @@ a:hover {
 
 /* Game */
 .gameContainer {
-  background-image: url("./images/Game_background.png");
-  background-size: cover;
-  z-index: -1;
   width: 100%;
   height: 45vw;
   display: flex;
@@ -84,6 +81,15 @@ a:hover {
 .screen {
   width: 100%;
   height: 20vw;
+  display: block;
+  position: relative;
+}
+
+.buttons {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 /* Caption */
@@ -107,16 +113,6 @@ a:hover {
   margin: 1% 0;
   font-size: 1.1em;
   font-weight: 700;
-}
-
-/* Timer */
-.timer {
-  position: absolute;
-  top: 27.5%;
-  left: 30.2%;
-  color: rgb(255, 175, 175);
-  font-size: 0.9em;
-  letter-spacing: .1em;
 }
 
 .gameArea {

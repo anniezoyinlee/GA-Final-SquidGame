@@ -1,0 +1,63 @@
+
+/* Timer */
+* {
+  border: 1px solid gold;
+}
+
+.pinkGuy {
+  position: relative;
+  width: 12vw;
+  height: 12vw;
+  top: 25%;
+  left: 10%;
+}
+
+.hoodie {
+  width: 55%;
+  height: 60%;
+  background: black;
+  border-width: 10px 8px 1px 8px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color:rgba(255, 0, 120, .9);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 22%;
+}
+
+.face {
+  width: 50px;
+  height: 50px;
+  background: black;
+  border: white 4px solid;
+  opacity: .95;
+  border-radius: 50%;
+  position: absolute;
+  top: 5%;
+  left: 14%;
+}
+
+.timerScreen {
+  width: 125px;
+  height: 70px;
+  background: rgba(0, 0, 0, .8);
+  border-width: 8px 5px;
+  border-style: solid;
+  border-color:rgba(255, 0, 120, .9);
+  border-radius: 5%;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  z-index: -1;
+}
+
+.timer {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  color: rgb(255, 175, 175);
+  font-size: 0.9em;
+  letter-spacing: .1em;
+}
+

@@ -19,7 +19,7 @@ function Game() {
   let rulesMarbles = "Guess if the number of mables in the hand are even or odd"
   let titleTGSS = "The Glass Stepping Stones"
   let rulesTGSS = "Choose top or bottom glass to cross the bridge"
-  let minute = 0
+  let minute = 1
   let second = 0
   let start = true
 
