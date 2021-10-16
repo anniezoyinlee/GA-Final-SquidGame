@@ -27,11 +27,21 @@ const Timer = ({min, sec}) => {
   });
 
   return (
-    <div className='timer'>
-      { minutes === 0 && seconds === 0
-        ? <h1>00:00</h1> 
-        : <h1>{minutes < 10 ?  `0${minutes}` : minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
-      }
+    <div className='pinkGuy'>
+      <div className='hoodie'>
+        <div className='face'>
+          <div className='shapeOnFace'></div>
+        </div>
+      </div>
+      <div className='ractangle'>
+        <div className='timerScreen'>
+        <div className='timer'></div>
+          { minutes === 0 && seconds === 0
+            ? <h1>00:00</h1> 
+            : <h1>{minutes < 10 ?  `0${minutes}` : minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+          }
+        </div>
+      </div>
     </div>
   )
 }

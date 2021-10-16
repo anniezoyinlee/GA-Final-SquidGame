@@ -6,6 +6,7 @@ import RLGL from './RLGL/RLGL'
 import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
 import Marbles from './Marbles/Marbles'
+import TGSS from './TGSS/TGSS'
 
 function Game() {
   let titleDalgona = "Dalgona Candy"
@@ -16,6 +17,8 @@ function Game() {
   let rulesToW = "Click the button to pull"
   let titleMarbles = "Marbles"
   let rulesMarbles = "Guess if the number of mables in the hand are even or odd"
+  let titleTGSS = "The Glass Stepping Stones"
+  let rulesTGSS = "Choose top or bottom glass to cross the bridge"
   let minute = 0
   let second = 0
   let start = true
@@ -64,6 +67,16 @@ function Game() {
           <Caption title={titleMarbles} rules={rulesMarbles} />
           <div className='buttons'>
             <button onClick={handleStart}>Start</button>
+            <Link to="/game/tgss">Next</Link>
+          </div>
+        </div>
+      } />
+      <Route path='/game/tgss' render={() => 
+        <div className='screen'>
+          <Timer min={minute} sec={second} />
+          <Caption title={titleTGSS} rules={rulesTGSS} />
+          <div className='buttons'>
+            <button onClick={handleStart}>Start</button>
             <Link to="/">Next</Link>
           </div>
         </div>
@@ -75,6 +88,7 @@ function Game() {
         <Route exact path='/game/dalgona' component={Dalgona} />
         <Route exact path='/game/tow' component={ToW} />
         <Route exact path='/game/marbles' component={Marbles} />
+        <Route exact path='/game/tgss' component={TGSS} />
       </main>
 
     </div>

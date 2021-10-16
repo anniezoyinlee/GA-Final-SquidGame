@@ -89,12 +89,12 @@ a:hover {
 /* Caption */
 .caption {
   transform: rotate(-10deg);
-  width: 30%;
+  width: 36%;
   position: absolute;
-  left: 48%;
+  left: 44%;
   top: 15%;
   letter-spacing: .05em;
-  text-align: center;
+  text-align: left;
 }
 
 .caption h1 {
