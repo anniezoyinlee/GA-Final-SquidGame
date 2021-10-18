@@ -26,13 +26,13 @@ function RLGL() {
     }
   };
 
-  setInterval(function() {
+  //Setting interval
+  let lightInterval = setInterval(function() {
     changeLight()
   }, Math.floor(3000 + Math.random() * 5000));
 
-
   function movePlayerRight001() {
-    setOffsetRight001(offsetRight001 + 10);
+    setOffsetRight001(offsetRight001 + 100);
   }
   function movePlayerRight002() {
     setOffsetRight002(offsetRight002 + 10);
@@ -44,11 +44,33 @@ function RLGL() {
     setOffsetRight004(offsetRight004 + 10);
   }
 
+  function completeRLGL() {
+    //Clearing interval
+    clearInterval(lightInterval);
+    let status = document.getElementById('lightSign');
+    // remove red light/green light sign
+    status.innerText = '';
+  }
+  
+  // reference: https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
+  function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+    return {
+      left: rect.left + window.scrollX,
+    };
+  }
+
   return (
     <div className="rlgl">
       <div className='playWindow-left'>
         <div className='ground'>
-          <div className='player' onClick={movePlayerRight001} style={{
+          <div className='player' onClick={(e) => {
+            movePlayerRight001()
+            console.log(getOffset(e.currentTarget).left)
+            if (getOffset(e.currentTarget).left > 900) {
+              completeRLGL() 
+            }
+          }} style={{
           transform: `translateX(${offsetRight001}px)`
         }}>001</div>
           <div className='player' onClick={movePlayerRight002} style={{
@@ -65,7 +87,7 @@ function RLGL() {
       </div>
       <div className='playWindow-right'>
         <div className='lightSign'>
-          <h1 id='lightSign'></h1>
+          <h1 id='lightSign' className='redlight'>Red Light</h1>
         </div>
       </div>
     </div>
