@@ -1,5 +1,4 @@
 import React, { useState }  from 'react'
-// import Life from '../Life/Life'
 import './Dalgona.css';
   
 function Dalgona() {
@@ -7,7 +6,6 @@ function Dalgona() {
 
   return (
     <div className="dalgona">
-      <div className='life'>Life: {life}</div>
       <div className='candy' onClick={(e) => {
         e.stopPropagation()
         setLife(life - 1)
@@ -102,4 +100,3 @@ export default Dalgona;
 // when all the lines are clicked, finish the game
 // click out of the line on the candy would lose lives
 // timer 
-

@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import './Tow.css';
 
-function ToW() {
 
+function ToW() {
+  // const [life, setLife] = useState(456);
 
   return (
     <div className="tow">
       <div className='button'>
         <button className='pullBtn'>Pull</button>
       </div>
-
+      
       <div className='view'>
         <div className='platform left'>
           <div className='top'>
@@ -29,7 +30,8 @@ function ToW() {
     </div>
   );
 }
-  
+
+
 export default ToW;
   
 

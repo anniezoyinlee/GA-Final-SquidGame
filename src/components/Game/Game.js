@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import Caption from './Caption/Caption';
 import Timer from './Timer/Timer';
+import Life from './Life/Life';
 import RLGL from './RLGL/RLGL'
 import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
@@ -9,18 +10,30 @@ import Marbles from './Marbles/Marbles'
 import TGSS from './TGSS/TGSS'
 
 function Game() {
-  let titleDalgona = "Dalgona Candy"
-  let rulesDalgona = "Click along the line to make the shape out"
+  // Red Light, Green Light
   let titleRLGL = "Red Light, Green Light"
   let rulesRLGL = "Click on the green pieces to make them move, only move when it's green light"
+  let lifeRLGL = 456;
+  // Dalgona Candy
+  let titleDalgona = "Dalgona Candy"
+  let rulesDalgona = "Click along the line to make the shape out"
+  let lifeDalgona = 456;
+  // Tug of War
   let titleToW = "Tug of War"
   let rulesToW = "Click the button to pull"
+  let lifeToW = 456;
+  // Marbles
   let titleMarbles = "Marbles"
   let rulesMarbles = "Guess if the number of mables in the hand are even or odd"
+  let lifeMarbles = 456;
+  // The Glass Stepping Stones
   let titleTGSS = "The Glass Stepping Stones"
   let rulesTGSS = "Choose top or bottom glass to cross the bridge"
+  let lifeTGSS = 456;
+  // Timer
   let minute = 1
   let second = 0
+  // Start button
   let start = true
 
   function handleStart() {
@@ -39,6 +52,7 @@ function Game() {
             <button onClick={handleStart}>Start</button>
             <Link to="/game/dalgona">Next</Link>
           </div>
+          <Life life={lifeRLGL} />
         </div>
       } />
       <Route path='/game/dalgona' render={() => 
@@ -49,6 +63,7 @@ function Game() {
             <button onClick={handleStart}>Start</button>
             <Link to="/game/tow">Next</Link>
           </div>
+          <Life life={lifeDalgona} />
         </div>
       } />
       <Route path='/game/tow' render={() => 
@@ -59,6 +74,7 @@ function Game() {
             <button onClick={handleStart}>Start</button>
             <Link to="/game/marbles">Next</Link>
           </div>
+          <Life life={lifeToW} />
         </div>
       } />
       <Route path='/game/marbles' render={() => 
@@ -69,6 +85,7 @@ function Game() {
             <button onClick={handleStart}>Start</button>
             <Link to="/game/tgss">Next</Link>
           </div>
+          <Life life={lifeMarbles} />
         </div>
       } />
       <Route path='/game/tgss' render={() => 
@@ -79,6 +96,7 @@ function Game() {
             <button onClick={handleStart}>Start</button>
             <Link to="/">Next</Link>
           </div>
+          <Life life={lifeTGSS} />
         </div>
       } />
       

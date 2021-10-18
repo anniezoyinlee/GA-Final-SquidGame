@@ -1,5 +1,4 @@
 import React, { useState }  from 'react'
-// import Life from '../Life/Life'
 import './Marbles.css';
   
 function Marbles() {

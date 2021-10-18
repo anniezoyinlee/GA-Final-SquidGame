@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import './TGSS.css';
 
 function TGSS() {
-
+  // const [life, setLife] = useState(456);
 
   return (
     <div className="tgss">
