@@ -3,29 +3,69 @@ import './RLGL.css';
   
 function RLGL() {
   // const [life, setLife] = useState(456);
+  const lights = ['Red Light', 'Green Light']
+  let index = 0
+
+  const [offsetRight001, setOffsetRight001] = useState(0);
+  const [offsetRight002, setOffsetRight002] = useState(0);
+  const [offsetRight003, setOffsetRight003] = useState(0);
+  const [offsetRight004, setOffsetRight004] = useState(0);
+
+  function changeLight() {
+    index = index + 1;
+    if (index == lights.length)
+        index = 0;
+
+    let status = document.getElementById('lightSign');
+    status.innerText = lights[index];
+
+    if (status.innerText === 'Red Light') {
+      status.classList = 'redlight'
+    } else if (status.innerText === 'Green Light') {
+      status.classList = 'greenlight'
+    }
+  };
+
+  setInterval(function() {
+    changeLight()
+  }, Math.floor(3000 + Math.random() * 5000));
+
+
+  function movePlayerRight001() {
+    setOffsetRight001(offsetRight001 + 10);
+  }
+  function movePlayerRight002() {
+    setOffsetRight002(offsetRight002 + 10);
+  }
+  function movePlayerRight003() {
+    setOffsetRight003(offsetRight003 + 10);
+  }
+  function movePlayerRight004() {
+    setOffsetRight004(offsetRight004 + 10);
+  }
 
   return (
     <div className="rlgl">
       <div className='playWindow-left'>
         <div className='ground'>
-          <div className='player'>001</div>
-          <div className='player'>002</div>
-          <div className='player'>003</div>
-          <div className='player'>004</div>
-          <div className='player'>005</div>
-          <div className='player'>006</div>
-          <div className='player'>007</div>
-          <div className='player'>008</div>
-          <div className='player'>009</div>
-          <div className='player'>010</div>
+          <div className='player' onClick={movePlayerRight001} style={{
+          transform: `translateX(${offsetRight001}px)`
+        }}>001</div>
+          <div className='player' onClick={movePlayerRight002} style={{
+          transform: `translateX(${offsetRight002}px)`
+        }}>002</div>
+          <div className='player' onClick={movePlayerRight003} style={{
+          transform: `translateX(${offsetRight003}px)`
+        }}>003</div>
+          <div className='player' onClick={movePlayerRight004} style={{
+          transform: `translateX(${offsetRight004}px)`
+        }}>004</div>
+    
         </div>
       </div>
       <div className='playWindow-right'>
         <div className='lightSign'>
-          { 3>2
-            ? <h1 className='redlight'>Red Light</h1>
-            : <h1 className='greenlight'>Green Light</h1> 
-          }
+          <h1 id='lightSign'></h1>
         </div>
       </div>
     </div>
