@@ -61,7 +61,7 @@ function Game() {
           <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
           <Route path='/game/tow' render={() => <Link to="/game/marbles">Next</Link> } />
           <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
-          <Route path='/game/tgss' render={() => <Link to="/rank">Next</Link> } />
+          <Route path='/game/tgss' render={() => <Link to="/">Next</Link> } />
         </div>
         {/* <Route path='/game/rlgl' render={() => <Life life={lifeRLGL} /> } />
         <Route path='/game/dalgona' render={() => <Life life={lifeDalgona} /> } />

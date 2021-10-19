@@ -25,30 +25,34 @@ function RLGL() {
     };
   }
 
+  
   function movePlayerRight001(e) {
-    setOffsetRight001(offsetRight001 + Math.floor(3 + Math.random() * 5));
-    if (getOffset(e.currentTarget).right > 910) {
+    let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
+    if (getOffset(e.currentTarget).left > endLine) {
       setPlayerPass(playerPass + 1)
       // unclickable after crossing the end line
       e.currentTarget.style.pointerEvents = 'none';
     }
+    setOffsetRight001(offsetRight001 + Math.floor(3 + Math.random() * 5));
   }
   function movePlayerRight002(e) {
-    setOffsetRight002(offsetRight002 + Math.floor(3 + Math.random() * 5));
-    if (getOffset(e.currentTarget).right > 910) {
+    let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
+    if (getOffset(e.currentTarget).left > endLine) {
       setPlayerPass(playerPass + 1)
       // unclickable after crossing the end line
       e.currentTarget.style.pointerEvents = 'none';
     }
+    setOffsetRight002(offsetRight002 + Math.floor(3 + Math.random() * 5));
   }
   function movePlayerRight003(e) {
-    setOffsetRight003(offsetRight003 + Math.floor(3 + Math.random() * 5));
-    if (getOffset(e.currentTarget).right > 910) {
+    let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
+    if (getOffset(e.currentTarget).left > endLine) {
       setPlayerPass(playerPass + 1)
       console.log(playerPass)
       // unclickable after crossing the end line
       e.currentTarget.style.pointerEvents = 'none';
     }
+    setOffsetRight003(offsetRight003 + Math.floor(3 + Math.random() * 5));
   }
 
   const lights = ['Red Light', 'Green Light']
@@ -72,9 +76,9 @@ function RLGL() {
   };
 
   // Setting interval
-  let lightInterval = setInterval(function() {
+  let lightInterval = setTimeout(function() {
     changeLight()
-  }, Math.floor(2000 + Math.random() * 5000));
+  }, 2000);
 
   if (playerPass === players.length) {
     console.log('gameOver')
