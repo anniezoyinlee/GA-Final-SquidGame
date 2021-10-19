@@ -9,11 +9,21 @@ function RLGL() {
   const [offsetRight001, setOffsetRight001] = useState(0);
   const [offsetRight002, setOffsetRight002] = useState(0);
 
-  function movePlayerRight001() {
-    setOffsetRight001(offsetRight001 + 100);
+  function movePlayerRight001(e) {
+    console.log(getOffset(e.currentTarget).left)
+    setOffsetRight001(offsetRight001 + 20);
+    if (getOffset(e.currentTarget).left > 920) {
+      // unclickable after crossing the end line
+      e.currentTarget.style.pointerEvents = 'none';
+    }
   }
-  function movePlayerRight002() {
-    setOffsetRight002(offsetRight002 + 80);
+  function movePlayerRight002(e) {
+    console.log(getOffset(e.currentTarget).left)
+    setOffsetRight002(offsetRight002 + Math.floor(20 + Math.random() * 80));
+    if (getOffset(e.currentTarget).left > 900) {
+      // unclickable after crossing the end line
+      e.currentTarget.style.pointerEvents = 'none';
+    }
   }
 
   const lights = ['Red Light', 'Green Light']
@@ -36,9 +46,9 @@ function RLGL() {
   };
 
   // Setting interval
-  let lightInterval = setInterval(function() {
-    changeLight()
-  }, 2000);
+  // let lightInterval = setInterval(function() {
+  //   changeLight()
+  // }, 2000);
   // }, Math.floor(3000 + Math.random() * 5000));
   
   // reference: https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
@@ -51,9 +61,7 @@ function RLGL() {
 
 
   if (!gameOver) {
-    const player1 = document.getElementById('player1')
-
-    console.log(player1)
+    
   }
 
   if (gameOver) {
@@ -61,7 +69,7 @@ function RLGL() {
     // remove red light/green light sign
     status.innerText = ''
     //Clearing interval
-    clearInterval(lightInterval);
+    // clearInterval(lightInterval);
   }
 
   return (
@@ -69,28 +77,11 @@ function RLGL() {
       <div className='playWindow-left'>
         <div className='ground'>
           <div id='player1' className='player' 
-            onClick={
-              (e) => {
-                movePlayerRight001()
-                // unclickable after crossing the end line
-                if (getOffset(e.currentTarget).left > 900) {
-                  e.currentTarget.style.pointerEvents = 'none';
-                }
-              }
-            } 
+            onClick={(e) => movePlayerRight001(e)} 
             style={{transform: `translateX(${offsetRight001}px)`}}>001</div>
           <div id='player2' className='player' 
-            onClick={
-              (e) => {
-                movePlayerRight002()
-                // unclickable after crossing the end line
-                if (getOffset(e.currentTarget).left > 900) {
-                  e.currentTarget.style.pointerEvents = 'none';
-                }
-              }
-            } 
+            onClick={(e) => movePlayerRight002(e)} 
             style={{transform: `translateX(${offsetRight002}px)`}}>002</div>
-         
         </div>
       </div>
       <div className='playWindow-right'>

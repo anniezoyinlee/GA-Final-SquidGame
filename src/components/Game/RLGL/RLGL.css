@@ -38,6 +38,7 @@
 .lightSign h1 {
   text-align: center;
   font-size: 1.8em;
+  pointer-events: none;
 }
 
 .redlight {
