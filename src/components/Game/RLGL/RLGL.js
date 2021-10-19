@@ -3,65 +3,43 @@ import './RLGL.css';
   
 function RLGL() {
   // const [life, setLife] = useState(456);
-
-  let index = 0
-
   const [gameOver, setGameOver] = useState(false);
 
+  // players' original location
   const [offsetRight001, setOffsetRight001] = useState(0);
   const [offsetRight002, setOffsetRight002] = useState(0);
-  const [offsetRight003, setOffsetRight003] = useState(0);
-  const [offsetRight004, setOffsetRight004] = useState(0);
-
-
-  const lights = ['Red Light', 'Green Light']
-  function changeLight() {
-   
-
-    if (!gameOver) {
-      index = index + 1;
-      if (index === lights.length)
-          index = 0;
-  
-      let status = document.getElementById('lightSign');
-      status.innerText = lights[index];
-      if (status.innerText === 'Red Light') {
-        status.classList = 'redlight'
-      } else if (status.innerText === 'Green Light') {
-        status.classList = 'greenlight'
-      }
-    } 
-
-  };
-
-  //Setting interval
-  let lightInterval = setInterval(function() {
-    changeLight()
-  }, Math.floor(3000 + Math.random() * 5000));
 
   function movePlayerRight001() {
     setOffsetRight001(offsetRight001 + 100);
   }
   function movePlayerRight002() {
-    setOffsetRight002(offsetRight002 + 10);
-  }
-  function movePlayerRight003() {
-    setOffsetRight003(offsetRight003 + 10);
-  }
-  function movePlayerRight004() {
-    setOffsetRight004(offsetRight004 + 10);
+    setOffsetRight002(offsetRight002 + 80);
   }
 
-  function completeRLGL() {
-    console.log('test')
+  const lights = ['Red Light', 'Green Light']
+  let index = 0
+
+  function changeLight() {
+    index = index + 1;
+    if (index == lights.length)
+        index = 0;
 
     let status = document.getElementById('lightSign');
-    // remove red light/green light sign
-    status.innerText = '';
-    setGameOver(true);
-    //Clearing interval
-    clearInterval(lightInterval);
-  }
+    status.innerText = lights[index];
+
+    // setting color style to match the test
+    if (status.innerText === 'Red Light') {
+      status.classList = 'redlight'
+    } else if (status.innerText === 'Green Light') {
+      status.classList = 'greenlight'
+    }
+  };
+
+  // Setting interval
+  let lightInterval = setInterval(function() {
+    changeLight()
+  }, 2000);
+  // }, Math.floor(3000 + Math.random() * 5000));
   
   // reference: https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
   function getOffset(el) {
@@ -71,32 +49,48 @@ function RLGL() {
     };
   }
 
+
+  if (!gameOver) {
+    const player1 = document.getElementById('player1')
+
+    console.log(player1)
+  }
+
+  if (gameOver) {
+    let status = document.getElementById('lightSign');
+    // remove red light/green light sign
+    status.innerText = ''
+    //Clearing interval
+    clearInterval(lightInterval);
+  }
+
   return (
     <div className="rlgl">
       <div className='playWindow-left'>
         <div className='ground'>
-          <div className='player' onClick={(e) => {
-            movePlayerRight001()
-            // completeRLGL()
-            // console.log(getOffset(e.currentTarget).left)
-            if (getOffset(e.currentTarget).left > 900) {
-              console.log(getOffset(e.currentTarget).left)
-              completeRLGL() 
-              e.currentTarget.style.pointerEvents = 'none';
-            }
-          }} style={{
-          transform: `translateX(${offsetRight001}px)`
-        }}>001</div>
-          <div className='player' onClick={movePlayerRight002} style={{
-          transform: `translateX(${offsetRight002}px)`
-        }}>002</div>
-          <div className='player' onClick={movePlayerRight003} style={{
-          transform: `translateX(${offsetRight003}px)`
-        }}>003</div>
-          <div className='player' onClick={movePlayerRight004} style={{
-          transform: `translateX(${offsetRight004}px)`
-        }}>004</div>
-    
+          <div id='player1' className='player' 
+            onClick={
+              (e) => {
+                movePlayerRight001()
+                // unclickable after crossing the end line
+                if (getOffset(e.currentTarget).left > 900) {
+                  e.currentTarget.style.pointerEvents = 'none';
+                }
+              }
+            } 
+            style={{transform: `translateX(${offsetRight001}px)`}}>001</div>
+          <div id='player2' className='player' 
+            onClick={
+              (e) => {
+                movePlayerRight002()
+                // unclickable after crossing the end line
+                if (getOffset(e.currentTarget).left > 900) {
+                  e.currentTarget.style.pointerEvents = 'none';
+                }
+              }
+            } 
+            style={{transform: `translateX(${offsetRight002}px)`}}>002</div>
+         
         </div>
       </div>
       <div className='playWindow-right'>
