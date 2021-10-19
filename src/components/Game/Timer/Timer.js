@@ -9,7 +9,7 @@ const Timer = ({min, sec}) => {
   const [ seconds, setSeconds ] =  useState(initialSeconds);
 
   useEffect(()=>{
-  let myInterval = setInterval(() => {
+    let myInterval = setInterval(() => {
       if (seconds > 0) {
         setSeconds(seconds - 1);
       } 

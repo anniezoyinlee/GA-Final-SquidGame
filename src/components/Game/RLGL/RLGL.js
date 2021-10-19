@@ -1,26 +1,51 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import './RLGL.css';
   
 function RLGL() {
   // const [life, setLife] = useState(456);
-  const [gameOver, setGameOver] = useState(false);
+  const [playerPass, setPlayerPass] = useState(0)
+  const players = document.querySelectorAll('.player')
+
+  console.log(playerPass, players.length)
+  if (playerPass !== players.length) {
+    console.log(playerPass, players.length)
+  }
 
   // players' original location
   const [offsetRight001, setOffsetRight001] = useState(0);
   const [offsetRight002, setOffsetRight002] = useState(0);
+  const [offsetRight003, setOffsetRight003] = useState(0);
+
+  // reference: https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
+  function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+    return {
+      left: rect.left + window.scrollX,
+      right: rect.right + window.scrollX,
+    };
+  }
 
   function movePlayerRight001(e) {
-    console.log(getOffset(e.currentTarget).left)
-    setOffsetRight001(offsetRight001 + 20);
-    if (getOffset(e.currentTarget).left > 920) {
+    setOffsetRight001(offsetRight001 + Math.floor(3 + Math.random() * 5));
+    if (getOffset(e.currentTarget).right > 910) {
+      setPlayerPass(playerPass + 1)
       // unclickable after crossing the end line
       e.currentTarget.style.pointerEvents = 'none';
     }
   }
   function movePlayerRight002(e) {
-    console.log(getOffset(e.currentTarget).left)
-    setOffsetRight002(offsetRight002 + Math.floor(20 + Math.random() * 80));
-    if (getOffset(e.currentTarget).left > 900) {
+    setOffsetRight002(offsetRight002 + Math.floor(3 + Math.random() * 5));
+    if (getOffset(e.currentTarget).right > 910) {
+      setPlayerPass(playerPass + 1)
+      // unclickable after crossing the end line
+      e.currentTarget.style.pointerEvents = 'none';
+    }
+  }
+  function movePlayerRight003(e) {
+    setOffsetRight003(offsetRight003 + Math.floor(3 + Math.random() * 5));
+    if (getOffset(e.currentTarget).right > 910) {
+      setPlayerPass(playerPass + 1)
+      console.log(playerPass)
       // unclickable after crossing the end line
       e.currentTarget.style.pointerEvents = 'none';
     }
@@ -31,8 +56,9 @@ function RLGL() {
 
   function changeLight() {
     index = index + 1;
-    if (index == lights.length)
-        index = 0;
+    if (index === lights.length) {
+      index = 0
+    }
 
     let status = document.getElementById('lightSign');
     status.innerText = lights[index];
@@ -42,34 +68,21 @@ function RLGL() {
       status.classList = 'redlight'
     } else if (status.innerText === 'Green Light') {
       status.classList = 'greenlight'
-    }
+    } 
   };
 
   // Setting interval
-  // let lightInterval = setInterval(function() {
-  //   changeLight()
-  // }, 2000);
-  // }, Math.floor(3000 + Math.random() * 5000));
-  
-  // reference: https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
-  function getOffset(el) {
-    const rect = el.getBoundingClientRect();
-    return {
-      left: rect.left + window.scrollX,
-    };
-  }
+  let lightInterval = setInterval(function() {
+    changeLight()
+  }, Math.floor(2000 + Math.random() * 5000));
 
-
-  if (!gameOver) {
-    
-  }
-
-  if (gameOver) {
-    let status = document.getElementById('lightSign');
-    // remove red light/green light sign
-    status.innerText = ''
+  if (playerPass === players.length) {
+    console.log('gameOver')
+    // let status = document.getElementById('lightSign');
+    // // remove red light/green light sign
+    // status.innerText = ''
     //Clearing interval
-    // clearInterval(lightInterval);
+    clearInterval(lightInterval);
   }
 
   return (
@@ -78,10 +91,13 @@ function RLGL() {
         <div className='ground'>
           <div id='player1' className='player' 
             onClick={(e) => movePlayerRight001(e)} 
-            style={{transform: `translateX(${offsetRight001}px)`}}>001</div>
+            style={{transform: `translateX(${offsetRight001}vw)`}}>001</div>
           <div id='player2' className='player' 
             onClick={(e) => movePlayerRight002(e)} 
-            style={{transform: `translateX(${offsetRight002}px)`}}>002</div>
+            style={{transform: `translateX(${offsetRight002}vw)`}}>002</div>
+          <div id='player3' className='player' 
+            onClick={(e) => movePlayerRight003(e)} 
+            style={{transform: `translateX(${offsetRight003}vw)`}}>003</div>
         </div>
       </div>
       <div className='playWindow-right'>

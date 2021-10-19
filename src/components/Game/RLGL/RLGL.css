@@ -41,6 +41,10 @@
   pointer-events: none;
 }
 
+.nolight {
+  color: white;
+}
+
 .redlight {
   color: rgb(255, 32, 32);
 }
