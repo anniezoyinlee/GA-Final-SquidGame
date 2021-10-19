@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Route, Link } from 'react-router-dom'
 import Caption from './Caption/Caption';
 import Timer from './Timer/Timer';
-import Life from './Life/Life';
+// import Life from './Life/Life';
 import RLGL from './RLGL/RLGL'
 import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
@@ -63,11 +63,11 @@ function Game() {
           <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
           <Route path='/game/tgss' render={() => <Link to="/rank">Next</Link> } />
         </div>
-        <Route path='/game/rlgl' render={() => <Life life={lifeRLGL} /> } />
+        {/* <Route path='/game/rlgl' render={() => <Life life={lifeRLGL} /> } />
         <Route path='/game/dalgona' render={() => <Life life={lifeDalgona} /> } />
         <Route path='/game/tow' render={() => <Life life={lifeToW} /> } />
         <Route path='/game/marbles' render={() => <Life life={lifeMarbles} /> } />
-        <Route path='/game/tgss' render={() => <Life life={lifeTGSS} /> } />
+        <Route path='/game/tgss' render={() => <Life life={lifeTGSS} /> } /> */}
       </div>
       
       <main className='gameArea'>
