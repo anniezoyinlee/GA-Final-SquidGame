@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useMemo } from "react";
 import { Route, Link } from 'react-router-dom'
 import Caption from './Caption/Caption';
 import Timer from './Timer/Timer';
@@ -8,8 +8,12 @@ import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
 import Marbles from './Marbles/Marbles'
 import TGSS from './TGSS/TGSS'
+// import { UserContext } from "./UserContext";
 
 function Game() {
+  // const [user, setUser] = useState(null);
+  // const value = useMemo(() => ({ user, setUser }), [user, setUser]);
+
   // Red Light, Green Light
   let titleRLGL = "Red Light, Green Light"
   let rulesRLGL = "Click on the green pieces to make them move, only move when it's green light"
@@ -44,61 +48,23 @@ function Game() {
 
   return (
     <div className="gameContainer">
-      <Route path='/game/rlgl' render={() => 
-        <div className='screen'>
-          <Timer min={minute} sec={second} />
-          <Caption title={titleRLGL} rules={rulesRLGL} />
-          <div className='buttons'>
-            <button onClick={handleStart}>Start</button>
-            <Link to="/game/dalgona">Next</Link>
-          </div>
-          <Life life={lifeRLGL} />
+      <div className='screen'>
+        <Timer min={minute} sec={second} />
+        <Route path='/game/rlgl' render={() => <Caption title={titleRLGL} rules={rulesRLGL} />} />
+        <Route path='/game/dalgona' render={() => <Caption title={titleDalgona} rules={rulesDalgona} />} />
+        <Route path='/game/tow' render={() => <Caption title={titleToW} rules={rulesToW} />} />
+        <Route path='/game/marbles' render={() => <Caption title={titleMarbles} rules={rulesMarbles} />} />
+        <Route path='/game/tgss' render={() => <Caption title={titleTGSS} rules={rulesTGSS} />} />
+        <div className='buttons'>
+          <button onClick={handleStart}>Start</button>
+          <Route path='/game/rlgl' render={() => <Link to="/game/dalgona">Next</Link> } />
+          <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
+          <Route path='/game/tow' render={() => <Link to="/game/marbles">Next</Link> } />
+          <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
+          <Route path='/game/tgss' render={() => <Link to="/rank">Next</Link> } />
         </div>
-      } />
-      <Route path='/game/dalgona' render={() => 
-        <div className='screen'>
-          <Timer min={minute} sec={second} />
-          <Caption title={titleDalgona} rules={rulesDalgona} />
-          <div className='buttons'>
-            <button onClick={handleStart}>Start</button>
-            <Link to="/game/tow">Next</Link>
-          </div>
-          <Life life={lifeDalgona} />
-        </div>
-      } />
-      <Route path='/game/tow' render={() => 
-        <div className='screen'>
-          <Timer min={minute} sec={second} />
-          <Caption title={titleToW} rules={rulesToW} />
-          <div className='buttons'>
-            <button onClick={handleStart}>Start</button>
-            <Link to="/game/marbles">Next</Link>
-          </div>
-          <Life life={lifeToW} />
-        </div>
-      } />
-      <Route path='/game/marbles' render={() => 
-        <div className='screen'>
-          <Timer min={minute} sec={second} />
-          <Caption title={titleMarbles} rules={rulesMarbles} />
-          <div className='buttons'>
-            <button onClick={handleStart}>Start</button>
-            <Link to="/game/tgss">Next</Link>
-          </div>
-          <Life life={lifeMarbles} />
-        </div>
-      } />
-      <Route path='/game/tgss' render={() => 
-        <div className='screen'>
-          <Timer min={minute} sec={second} />
-          <Caption title={titleTGSS} rules={rulesTGSS} />
-          <div className='buttons'>
-            <button onClick={handleStart}>Start</button>
-            <Link to="/">Next</Link>
-          </div>
-          <Life life={lifeTGSS} />
-        </div>
-      } />
+        <Life life={lifeRLGL} />
+      </div>
       
       <main className='gameArea'>
         {/* Setting route to each pages */}
