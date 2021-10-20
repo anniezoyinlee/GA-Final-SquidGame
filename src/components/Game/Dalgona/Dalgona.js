@@ -3,6 +3,20 @@ import './Dalgona.css';
   
 function Dalgona() {
   const [life, setLife] = useState(456);
+  const [clickedPiece, setClickedPiece] = useState([])
+
+  const clicked = (e) => {
+    e.stopPropagation();
+    setClickedPiece(arr => [...arr, `${arr.length}`]);
+    e.currentTarget.style.opacity = 4;
+    e.currentTarget.style.pointerEvents = 'none';
+  }
+
+  const slices = document.querySelectorAll('.slice')
+  console.log(slices.length, clickedPiece.length)
+  if (clickedPiece.length === slices.length) {
+    console.log('game over')
+  }
 
   return (
     <div className="dalgona">
@@ -14,77 +28,34 @@ function Dalgona() {
       </div>
       <ul className="circleLine">
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('1') 
-          console.log(e.currentTarget)
-        }}></div>
+          <div id='slice1' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('2') 
-        }}></div>
+          <div id='slice2' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('3') 
-        }}></div>
+          <div id='slice3' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('4') 
-        }}></div>
+          <div id='slice4' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('5') 
-        }}></div>
+          <div id='slice5' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('6') 
-        }}></div>
+          <div id='slice6' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('7') 
-        }}></div>
+          <div id='slice7' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('8') 
-        }}></div>
+          <div id='slice8' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('9') 
-        }}></div>
+          <div id='slice9' className="slice" onClick={e => clicked(e) }></div>
         </li>
         <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('10') 
-        }}></div>
-        </li>
-        <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('11') 
-        }}></div>
-        </li>
-        <li>
-          <div className="slice" onClick={(e) => {
-          e.stopPropagation();
-          console.log('12') 
-        }}></div>
+          <div id='slice10' className="slice" onClick={e => clicked(e) }></div>
         </li>
       </ul>
       <div className='circleShape' onClick={(e) => {
@@ -97,7 +68,4 @@ function Dalgona() {
   
 export default Dalgona;
 
-// make onclick functions, user click on each of lines will change style
-// when all the lines are clicked, finish the game
-// click out of the line on the candy would lose lives
 // timer 

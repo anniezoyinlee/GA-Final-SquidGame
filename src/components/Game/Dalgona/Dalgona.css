@@ -92,13 +92,6 @@ li:nth-child(10) {
   transform: rotate(324deg) skewY(-60deg);
 }
 
-li:nth-child(11) {
-  transform: rotate(324deg) skewY(-90deg);
-}
-
-li:nth-child(12) {
-  transform: rotate(324deg) skewY(-90deg);
-}
 
 li:first-child .slice,
 li:nth-child(2) .slice,
@@ -109,9 +102,7 @@ li:nth-child(6) .slice,
 li:nth-child(7) .slice,
 li:nth-child(8) .slice,
 li:nth-child(9) .slice,
-li:nth-child(10) .slice,
-li:nth-child(11) .slice,
-li:nth-child(12) .slice   {
+li:nth-child(10) .slice {
   background: rgb(94, 59, 26);
   opacity: .4;
 }
@@ -125,9 +116,7 @@ li:nth-child(6) .slice:hover,
 li:nth-child(7) .slice:hover,
 li:nth-child(8) .slice:hover,
 li:nth-child(9) .slice:hover,
-li:nth-child(10) .slice:hover,
-li:nth-child(11) .slice:hover,
-li:nth-child(12) .slice:hover {
+li:nth-child(10) .slice:hover {
   opacity: .7;
   cursor: cell;
 }
@@ -141,9 +130,7 @@ li:nth-child(6) .slice:active,
 li:nth-child(7) .slice:active,
 li:nth-child(8) .slice:active,
 li:nth-child(9) .slice:active,
-li:nth-child(10) .slice:active,
-li:nth-child(11) .slice:active,
-li:nth-child(12) .slice:active {
+li:nth-child(10) .slice:active {
   opacity: 1;
 }
 
