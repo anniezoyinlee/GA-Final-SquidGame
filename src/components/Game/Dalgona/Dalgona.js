@@ -6,6 +6,7 @@ function Dalgona() {
 
   return (
     <div className="dalgona">
+      <h1>Life: {life}</h1>
       <div className='candy' onClick={(e) => {
         e.stopPropagation()
         setLife(life - 1)

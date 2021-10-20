@@ -26,7 +26,8 @@ function handleInterval() {
 }
   
 function RLGL() {
-  // const [life, setLife] = useState(456);
+  const [life, setLife] = useState(456);
+
   const [playerPass, setPlayerPass] = useState(0)
   const players = document.querySelectorAll('.player')
   console.log(playerPass, players.length)
@@ -110,9 +111,8 @@ function RLGL() {
             onClick={(e) => {
               let lightSign = document.getElementById('lightSign')
               if (lightSign.innerText === 'Red Light') {
-                console.log('red')
+                setLife(life - 1)
               } else if (lightSign.innerText === 'Green Light') {
-                console.log('green')
                 movePlayerRight001(e)
               } 
             }} 
@@ -121,7 +121,7 @@ function RLGL() {
             onClick={(e) => {
               let lightSign = document.getElementById('lightSign')
               if (lightSign.innerText === 'Red Light') {
-                console.log('lose life')
+                setLife(life - 1)
               } else if (lightSign.innerText === 'Green Light') {
                 movePlayerRight002(e)
               } 
@@ -131,9 +131,8 @@ function RLGL() {
             onClick={(e) => {
               let lightSign = document.getElementById('lightSign')
               if (lightSign.innerText === 'Red Light') {
-                console.log('red')
+                setLife(life - 1)
               } else if (lightSign.innerText === 'Green Light') {
-                console.log('green')
                 movePlayerRight003(e)
               } 
             }} 
@@ -142,7 +141,8 @@ function RLGL() {
       </div>
       <div className='playWindow-right'>
         <div className='lightSign'>
-          <h1 id='lightSign' className='nolight'></h1>
+          <h1>Life: {life}</h1>
+          <h1 id='lightSign' className='nolight'>No Light</h1>
         </div>
       </div>
     </div>
@@ -151,7 +151,6 @@ function RLGL() {
   
 export default RLGL;
 
-// if player is clicked during red light, life --
 // when the timer goes 0, no green pieces are clickable
 // when the game is over, do alive player count and show the next button
 // dry the code
