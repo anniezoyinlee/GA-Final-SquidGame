@@ -6,6 +6,10 @@ import './Tow.css';
 function ToW() {
   const {life, setLife} = useContext(LifeContext)
 
+  const pull = () => {
+    const player = document.querySelectorAll('.top')
+  }
+
   return (
     <div className="tow">
       <div className='button'>
@@ -14,18 +18,32 @@ function ToW() {
       
       <div className='view'>
         <div className='platform left'>
-          <div className='top'>
-            <div className='player'>001</div>
-            <div className='player'>002</div>
-          </div>
+          <div className='top'></div>
           <div className='bottom'></div>
         </div>
 
         <div className='middle'></div>
-        
+
         <div className='platform right'>
           <div className='top'></div>
           <div className='bottom'></div>
+        </div>
+      </div>
+      <div className='theTow'>
+        <div className='rope'></div>
+        <div className='players'>
+          <div className='player'></div>
+          <div className='player'></div>
+          <div className='player'></div>
+          <div className='player'></div>
+          <div className='player'></div>
+        </div>
+        <div className='enemies'>
+          <div className='player'></div>
+          <div className='player'></div>
+          <div className='player'></div>
+          <div className='player'></div>
+          <div className='player'></div>
         </div>
       </div>
     </div>

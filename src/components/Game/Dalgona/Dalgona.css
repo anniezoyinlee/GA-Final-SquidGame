@@ -42,7 +42,7 @@
   height: 200%;
 }
 
-li {
+.circleLine li {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -52,85 +52,85 @@ li {
   transform-origin: 0% 100%;
 }
 
-li:first-child {
+.circleLine li:first-child {
   transform: rotate(0deg) skewY(-60deg);
 }
 
-li:nth-child(2) {
+.circleLine li:nth-child(2) {
   transform: rotate(36deg) skewY(-60deg);
 }
 
-li:nth-child(3) {
+.circleLine li:nth-child(3) {
   transform: rotate(72deg) skewY(-60deg);
 }
 
-li:nth-child(4) {
+.circleLine li:nth-child(4) {
   transform: rotate(108deg) skewY(-60deg);
 }
 
-li:nth-child(5) {
+.circleLine li:nth-child(5) {
   transform: rotate(144deg) skewY(-60deg);
 }
 
-li:nth-child(6) {
+.circleLine li:nth-child(6) {
   transform: rotate(180deg) skewY(-60deg);
 }
 
-li:nth-child(7) {
+.circleLine li:nth-child(7) {
   transform: rotate(216deg) skewY(-60deg);
 }
 
-li:nth-child(8) {
+.circleLine li:nth-child(8) {
   transform: rotate(252deg) skewY(-60deg);
 }
 
-li:nth-child(9) {
+.circleLine li:nth-child(9) {
   transform: rotate(288deg) skewY(-60deg);
 }
 
-li:nth-child(10) {
+.circleLine li:nth-child(10) {
   transform: rotate(324deg) skewY(-60deg);
 }
 
 
-li:first-child .slice,
-li:nth-child(2) .slice,
-li:nth-child(3) .slice,
-li:nth-child(4) .slice,
-li:nth-child(5) .slice,
-li:nth-child(6) .slice,
-li:nth-child(7) .slice,
-li:nth-child(8) .slice,
-li:nth-child(9) .slice,
-li:nth-child(10) .slice {
+.circleLine li:first-child .slice,
+.circleLine li:nth-child(2) .slice,
+.circleLine li:nth-child(3) .slice,
+.circleLine li:nth-child(4) .slice,
+.circleLine li:nth-child(5) .slice,
+.circleLine li:nth-child(6) .slice,
+.circleLine li:nth-child(7) .slice,
+.circleLine li:nth-child(8) .slice,
+.circleLine li:nth-child(9) .slice,
+.circleLine li:nth-child(10) .slice {
   background: rgb(94, 59, 26);
   opacity: .4;
 }
 
-li:first-child .slice:hover,
-li:nth-child(2) .slice:hover,
-li:nth-child(3) .slice:hover,
-li:nth-child(4) .slice:hover,
-li:nth-child(5) .slice:hover,
-li:nth-child(6) .slice:hover,
-li:nth-child(7) .slice:hover,
-li:nth-child(8) .slice:hover,
-li:nth-child(9) .slice:hover,
-li:nth-child(10) .slice:hover {
+.circleLine li:first-child .slice:hover,
+.circleLine li:nth-child(2) .slice:hover,
+.circleLine li:nth-child(3) .slice:hover,
+.circleLine li:nth-child(4) .slice:hover,
+.circleLine li:nth-child(5) .slice:hover,
+.circleLine li:nth-child(6) .slice:hover,
+.circleLine li:nth-child(7) .slice:hover,
+.circleLine li:nth-child(8) .slice:hover,
+.circleLine li:nth-child(9) .slice:hover,
+.circleLine li:nth-child(10) .slice:hover {
   opacity: .7;
   cursor: cell;
 }
 
-li:first-child .slice:active,
-li:nth-child(2) .slice:active,
-li:nth-child(3) .slice:active,
-li:nth-child(4) .slice:active,
-li:nth-child(5) .slice:active,
-li:nth-child(6) .slice:active,
-li:nth-child(7) .slice:active,
-li:nth-child(8) .slice:active,
-li:nth-child(9) .slice:active,
-li:nth-child(10) .slice:active {
+.circleLine li:first-child .slice:active,
+.circleLine li:nth-child(2) .slice:active,
+.circleLine li:nth-child(3) .slice:active,
+.circleLine li:nth-child(4) .slice:active,
+.circleLine li:nth-child(5) .slice:active,
+.circleLine li:nth-child(6) .slice:active,
+.circleLine li:nth-child(7) .slice:active,
+.circleLine li:nth-child(8) .slice:active,
+.circleLine li:nth-child(9) .slice:active,
+.circleLine li:nth-child(10) .slice:active {
   opacity: 1;
 }
 

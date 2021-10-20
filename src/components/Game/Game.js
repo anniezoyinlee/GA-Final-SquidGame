@@ -11,10 +11,13 @@ import './Game.css'
 import { LifeContext } from "./LifeContext";
 
 function Game() {
+  // Life count
   const [life, setLife] = useState(456)
   const lifeValue = useMemo(() => ({life, setLife}), [life, setLife])
-  // const [user, setUser] = useState(null);
-  // const value = useMemo(() => ({ user, setUser }), [user, setUser]);
+
+  // Timer
+  const [minute, setMinute] = useState(5)
+  const [second, setSecond] = useState(0)
 
   // Red Light, Green Light
   let titleRLGL = "Red Light, Green Light"
@@ -31,18 +34,18 @@ function Game() {
   // The Glass Stepping Stones
   let titleTGSS = "The Glass Stepping Stones"
   let rulesTGSS = "Choose top or bottom glass to cross the bridge"
-  // Timer
-  const [minute, setMinute] = useState(0)
-  const [second, setSecond] = useState(0)
  
+  const [canStart, setCanStart] = useState(true)
+
   function handleStart() {
-    // Show game area
-    let game = document.querySelector('.gameArea')
-    game.style.display = 'block'
+    setCanStart(!canStart)
   }
+
+  // if ()
 
   return (
     <div className="gameContainer">
+      {canStart ? <button onClick={()=>handleStart()}>Start</button> : 'this is false'}
       <div className='screen'>
         <Timer min={minute} sec={second} />
         <Route path='/game/rlgl' render={() => <Caption title={titleRLGL} rules={rulesRLGL} /> } />

@@ -44,12 +44,6 @@
   height: 5vw;
   border-top: rgba(255, 200, 0, .9) 20px solid;
   border-bottom: rgba(255, 200, 0, 0.9) 5px solid;
-  display: flex;
-  flex-direction: row;
-}
-
-.top .player {
-  margin: 1%;
 }
 
 .bottom {
@@ -71,4 +65,42 @@
   border: 2px rgba(255, 0, 0, 0.7) solid;
   height: 16vw;
   margin-top: -2%;
+}
+
+.theTow {
+  border: 5px solid black;
+  width: 80%;
+  height: 10vw;
+  position: absolute;
+  top: 40%;
+  left: 10%
+}
+
+.rope {
+  position: absolute;
+  top: 32%;
+  border-top: 3px pink solid;
+  height: 0;
+  width: 100%;
+  margin-top: -2%;
+  z-index: 1;
+}
+
+.players {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 15%;
+}
+
+.enemies {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 15%
+}
+
+.theTow .player {
+  position: absolute;
+  margin: 2%;
 }

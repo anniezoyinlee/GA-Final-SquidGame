@@ -7,6 +7,7 @@ HTML
 CSS
 JavaScript
 React
+React Context(New Technology)
 
 ### backend
 Node
