@@ -1,14 +1,55 @@
 import React, { useState, useEffect }  from 'react'
 import './RLGL.css';
+
+const lights = ['Red Light', 'Green Light']
+let index = 0
+
+function changeLight() {
+  index = index + 1;
+  if (index === lights.length) {
+    index = 0
+  }
+
+  let status = document.getElementById('lightSign');
+  status.innerText = lights[index];
+
+  // setting color style to match the test
+  if (status.innerText === 'Red Light') {
+    status.classList = 'redlight'
+  } else if (status.innerText === 'Green Light') {
+    status.classList = 'greenlight'
+  } 
+};
+
+function handleInterval() {
+  changeLight()
+}
   
 function RLGL() {
   // const [life, setLife] = useState(456);
   const [playerPass, setPlayerPass] = useState(0)
   const players = document.querySelectorAll('.player')
-
   console.log(playerPass, players.length)
-  if (playerPass !== players.length) {
-    console.log(playerPass, players.length)
+
+  // Setting interval
+  // reference: https://stackoverflow.com/questions/53859601/how-do-i-clearinterval-on-click-with-react-hooks
+  const useInterval = (handler, interval) => {
+    const [lightInterval, setLightInterval] = useState();
+    useEffect(() => {
+      const light = setInterval(handler, interval);
+      setLightInterval(light);
+      return () => clearInterval(light);
+    }, []);
+    return () => clearInterval(lightInterval);
+  };
+
+  const stopInterval = useInterval(handleInterval, 2000 + Math.floor(Math.random()*1000));
+
+  // gameover condition
+  if (playerPass === players.length) {
+    //Clearing interval
+    stopInterval()
+    console.log('gameOver')
   }
 
   // players' original location
@@ -25,68 +66,40 @@ function RLGL() {
     };
   }
 
-  
+  let playerSpeed = 2 + Math.random();
   function movePlayerRight001(e) {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
-    if (getOffset(e.currentTarget).left > endLine) {
+    setOffsetRight001(offsetRight001 + playerSpeed);
+
+    console.log(getOffset(e.currentTarget).right, endLine)
+    
+    if (getOffset(e.currentTarget).right > endLine) {
       setPlayerPass(playerPass + 1)
       // unclickable after crossing the end line
       e.currentTarget.style.pointerEvents = 'none';
     }
-    setOffsetRight001(offsetRight001 + Math.floor(3 + Math.random() * 5));
   }
   function movePlayerRight002(e) {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
-    if (getOffset(e.currentTarget).left > endLine) {
+    setOffsetRight002(offsetRight002 + playerSpeed);
+    console.log(getOffset(e.currentTarget).right, endLine)
+
+    if (getOffset(e.currentTarget).right > endLine) {
       setPlayerPass(playerPass + 1)
       // unclickable after crossing the end line
       e.currentTarget.style.pointerEvents = 'none';
     }
-    setOffsetRight002(offsetRight002 + Math.floor(3 + Math.random() * 5));
   }
   function movePlayerRight003(e) {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
-    if (getOffset(e.currentTarget).left > endLine) {
+    setOffsetRight003(offsetRight003 + playerSpeed);
+
+    console.log(getOffset(e.currentTarget).right, endLine)
+    if (getOffset(e.currentTarget).right > endLine) {
       setPlayerPass(playerPass + 1)
-      console.log(playerPass)
       // unclickable after crossing the end line
       e.currentTarget.style.pointerEvents = 'none';
     }
-    setOffsetRight003(offsetRight003 + Math.floor(3 + Math.random() * 5));
-  }
-
-  const lights = ['Red Light', 'Green Light']
-  let index = 0
-
-  function changeLight() {
-    index = index + 1;
-    if (index === lights.length) {
-      index = 0
-    }
-
-    let status = document.getElementById('lightSign');
-    status.innerText = lights[index];
-
-    // setting color style to match the test
-    if (status.innerText === 'Red Light') {
-      status.classList = 'redlight'
-    } else if (status.innerText === 'Green Light') {
-      status.classList = 'greenlight'
-    } 
-  };
-
-  // Setting interval
-  let lightInterval = setTimeout(function() {
-    changeLight()
-  }, 2000);
-
-  if (playerPass === players.length) {
-    console.log('gameOver')
-    // let status = document.getElementById('lightSign');
-    // // remove red light/green light sign
-    // status.innerText = ''
-    //Clearing interval
-    clearInterval(lightInterval);
   }
 
   return (
@@ -106,7 +119,7 @@ function RLGL() {
       </div>
       <div className='playWindow-right'>
         <div className='lightSign'>
-          <h1 id='lightSign' className='redlight'>Red Light</h1>
+          <h1 id='lightSign' className='nolight'></h1>
         </div>
       </div>
     </div>
@@ -115,7 +128,6 @@ function RLGL() {
   
 export default RLGL;
   
-// fix setInterval issues
 // when the green piece is clicked during green light, move toward end line
 // when the green piece is clicked during red light, the green piece turns not clickable
 // if all the clickable green pieces reach the end line, game is over
