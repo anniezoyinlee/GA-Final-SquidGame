@@ -107,13 +107,36 @@ function RLGL() {
       <div className='playWindow-left'>
         <div className='ground'>
           <div id='player1' className='player' 
-            onClick={(e) => movePlayerRight001(e)} 
+            onClick={(e) => {
+              let lightSign = document.getElementById('lightSign')
+              if (lightSign.innerText === 'Red Light') {
+                console.log('red')
+              } else if (lightSign.innerText === 'Green Light') {
+                console.log('green')
+                movePlayerRight001(e)
+              } 
+            }} 
             style={{transform: `translateX(${offsetRight001}vw)`}}>001</div>
           <div id='player2' className='player' 
-            onClick={(e) => movePlayerRight002(e)} 
+            onClick={(e) => {
+              let lightSign = document.getElementById('lightSign')
+              if (lightSign.innerText === 'Red Light') {
+                console.log('lose life')
+              } else if (lightSign.innerText === 'Green Light') {
+                movePlayerRight002(e)
+              } 
+            }} 
             style={{transform: `translateX(${offsetRight002}vw)`}}>002</div>
           <div id='player3' className='player' 
-            onClick={(e) => movePlayerRight003(e)} 
+            onClick={(e) => {
+              let lightSign = document.getElementById('lightSign')
+              if (lightSign.innerText === 'Red Light') {
+                console.log('red')
+              } else if (lightSign.innerText === 'Green Light') {
+                console.log('green')
+                movePlayerRight003(e)
+              } 
+            }} 
             style={{transform: `translateX(${offsetRight003}vw)`}}>003</div>
         </div>
       </div>
@@ -127,9 +150,8 @@ function RLGL() {
 }
   
 export default RLGL;
-  
-// when the green piece is clicked during green light, move toward end line
-// when the green piece is clicked during red light, the green piece turns not clickable
-// if all the clickable green pieces reach the end line, game is over
+
+// if player is clicked during red light, life --
 // when the timer goes 0, no green pieces are clickable
 // when the game is over, do alive player count and show the next button
+// dry the code
