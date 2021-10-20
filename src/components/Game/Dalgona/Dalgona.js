@@ -1,8 +1,9 @@
-import React, { useState }  from 'react'
+import React, { useState, useContext }  from 'react'
+import { LifeContext } from '../LifeContext';
 import './Dalgona.css';
   
 function Dalgona() {
-  const [life, setLife] = useState(456);
+  const {life, setLife} = useContext(LifeContext)
   const [clickedPiece, setClickedPiece] = useState([])
 
   const clicked = (e) => {
@@ -20,7 +21,6 @@ function Dalgona() {
 
   return (
     <div className="dalgona">
-      <h1>Life: {life}</h1>
       <div className='candy' onClick={(e) => {
         e.stopPropagation()
         setLife(life - 1)

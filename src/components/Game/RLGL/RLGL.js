@@ -1,4 +1,5 @@
-import React, { useState, useEffect }  from 'react'
+import React, { useState, useEffect, useContext }  from 'react'
+import { LifeContext } from '../LifeContext';
 import './RLGL.css';
 
 const lights = ['Red Light', 'Green Light']
@@ -26,7 +27,7 @@ function handleInterval() {
 }
   
 function RLGL() {
-  const [life, setLife] = useState(456);
+  const {life, setLife} = useContext(LifeContext)
 
   const [playerPass, setPlayerPass] = useState(0)
   const players = document.querySelectorAll('.player')
@@ -141,7 +142,6 @@ function RLGL() {
       </div>
       <div className='playWindow-right'>
         <div className='lightSign'>
-          <h1>Life: {life}</h1>
           <h1 id='lightSign' className='nolight'>No Light</h1>
         </div>
       </div>

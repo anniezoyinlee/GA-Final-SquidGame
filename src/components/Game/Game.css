@@ -1,0 +1,10 @@
+.gameArea {
+  display: none;
+}
+
+.life {
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  font-size: 1.2em;
+}

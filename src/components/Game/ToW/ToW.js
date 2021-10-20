@@ -1,9 +1,10 @@
-import React, { useState }  from 'react'
+import React, { useState, useContext }  from 'react'
+import { LifeContext } from '../LifeContext';
 import './Tow.css';
 
 
 function ToW() {
-  // const [life, setLife] = useState(456);
+  const {life, setLife} = useContext(LifeContext)
 
   return (
     <div className="tow">

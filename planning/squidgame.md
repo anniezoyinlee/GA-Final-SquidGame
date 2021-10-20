@@ -32,20 +32,21 @@ APP/Landing
 ## User stories
 ### MVP Goals
 As a player, I want to click on the start button to start the first game
-As a player, I want to see the current score status on the game pages
 As a player, I want to see a next game button when I finish a game
 As a player, I want to click on the next game button to start the next game
 As a player, I want to click on the start button to start when I'm on a new game's page
-As a player, I want to click on the Home button to exit the game
-As a player, I want to see the restart button on the home page if I exit the game from the game page
-As a player, I want to click on the rank button to see the rank before a game starts and after a game is finished/lost
-As a player, I want to see a message that the game is finished when I finish all the games
 As a player, I want to enter my name for the rank when the game is finished
 As a player, I want to see my name on the updated rank page
-As a player, I want to see a home button on the rank page
 
 ### Strength Goals
+As a player, I want to click on the Home button to exit the game
+As a player, I want to see the restart button on the home page if I exit the game from the game page
+As a player, I want to see the current score status on the game pages
+As a player, I want to click on the rank button to see the rank before a game starts and after a game is finished/lost
+As a player, I want to see a message that the game is finished when I finish all the games
+As a player, I want to see a home button on the rank page
 As a player, I want to have a pretty UI
+As a player, I want to scan a QR code on a card to start playing the games
 
 ## Wireframes
 Landing page

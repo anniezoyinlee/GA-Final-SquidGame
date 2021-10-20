@@ -1,8 +1,9 @@
-import React, { useState }  from 'react'
+import React, { useState, useContext }  from 'react'
+import { LifeContext } from '../LifeContext';
 import './Marbles.css';
   
 function Marbles() {
-  const [life, setLife] = useState(456)
+  const {life, setLife} = useContext(LifeContext)
   const [clicked, setClicked] = useState(false)
   const [marbles, setMarbles] = useState(10)
   const marbleAmount = Math.floor(1 + Math.random() * 9)
