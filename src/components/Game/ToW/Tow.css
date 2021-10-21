@@ -62,15 +62,6 @@
   margin-top: -2%;
 }
 
-.theTow {
-  border: .5vw solid black;
-  width: 80%;
-  height: 10vw;
-  position: absolute;
-  top: 30%;
-  left: 10%
-}
-
 .rope {
   position: absolute;
   top: 32%;
@@ -96,6 +87,5 @@
 }
 
 .theTow .player {
-  position: absolute;
   margin: 2%;
 }

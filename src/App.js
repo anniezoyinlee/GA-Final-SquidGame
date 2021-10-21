@@ -5,8 +5,6 @@ import Rank from './components/Rank/Rank'
 import Game from './components/Game/Game'
 import './App.css';
 
-//  
-
 function App() {
 
 return (

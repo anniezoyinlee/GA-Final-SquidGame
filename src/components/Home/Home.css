@@ -24,8 +24,3 @@
 .landingBtn a:hover {
   opacity: .6;
 }
-
-img {
-  max-width: 800px;
-  max-height: 600px;
-}

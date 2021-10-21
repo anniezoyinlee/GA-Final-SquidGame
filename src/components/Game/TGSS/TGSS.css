@@ -8,13 +8,15 @@
   justify-content: space-around;
 }
 
-.players {
+.tgss .players {
   position: absolute;
-  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .players .player {
-  margin: 2%;
+  margin: 1%;
 }
 
 .bridge{
