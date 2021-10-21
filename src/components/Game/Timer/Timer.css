@@ -15,7 +15,7 @@
   border-width: 1vw .8vw .1vw .8vw;
   box-sizing: border-box;
   border-style: solid;
-  border-color:rgba(255, 0, 120, .9);
+  border-color:#ff2277;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -40,7 +40,7 @@
   background: rgba(0, 0, 0, .8);
   border-width: .8vw .5vw;
   border-style: solid;
-  border-color:rgba(255, 0, 120, .9);
+  border-color:#ff2277;
   border-radius: 5%;
   position: absolute;
   top: 55%;
@@ -52,7 +52,7 @@
   position: absolute;
   top: 0;
   left: 5%;
-  color: rgb(255, 175, 175);
+  color: rgba(255, 255, 255, 0.95);
   font-size: 1vw;
   letter-spacing: .1em;
 }

@@ -72,7 +72,6 @@ function RLGL() {
   function movePlayerRight001(e) {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
     setOffsetRight001(offsetRight001 + playerSpeed);
-
     console.log(getOffset(e.currentTarget).right, endLine)
     
     if (getOffset(e.currentTarget).right > endLine) {
@@ -117,7 +116,7 @@ function RLGL() {
                 movePlayerRight001(e)
               } 
             }} 
-            style={{transform: `translateX(${offsetRight001}vw)`}}>001</div>
+            style={{transform: `translateX(${offsetRight001}vw)`}}></div>
           <div id='player2' className='player' 
             onClick={(e) => {
               let lightSign = document.getElementById('lightSign')
@@ -127,7 +126,7 @@ function RLGL() {
                 movePlayerRight002(e)
               } 
             }} 
-            style={{transform: `translateX(${offsetRight002}vw)`}}>002</div>
+            style={{transform: `translateX(${offsetRight002}vw)`}}></div>
           <div id='player3' className='player' 
             onClick={(e) => {
               let lightSign = document.getElementById('lightSign')
@@ -137,7 +136,7 @@ function RLGL() {
                 movePlayerRight003(e)
               } 
             }} 
-            style={{transform: `translateX(${offsetRight003}vw)`}}>003</div>
+            style={{transform: `translateX(${offsetRight003}vw)`}}></div>
         </div>
       </div>
       <div className='playWindow-right'>

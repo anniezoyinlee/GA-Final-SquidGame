@@ -26,13 +26,37 @@
 }
 
 .playBtn {
-  font-size: 6vw;
+  font-size: 8vw;
+  letter-spacing: .5vw;
+  text-shadow: -.03em 0 #219669, 0 .03em #219669, .03em 0 #219669, 0 -.03em #219669;
+  color: white;
+  margin: 5%;
 }
 
-.life {
+.buttons a {
+  font-size: 8vw;
+  letter-spacing: .5vw;
+  text-shadow: -.03em 0 #219669, 0 .03em #219669, .03em 0 #219669, 0 -.03em #219669;
+  color: white;
+  margin: 5%;
+}
+
+h1.life {
   position: absolute;
   top: 0;
   left: 1%;
-  font-size: 2vw;
+  font-size: 1.8vw;
+  letter-spacing: .2vw;
+  text-shadow: -.07em 0 #ff2277, 0 .07em #ff2277, .07em 0 #ff2277, 0 -.07em #ff2277;
+  color: white;
 }
 
+/* player */
+.player {
+  width: 2vw;
+  height: 3vw;
+  background-color:#219669;
+  color: white;
+  font-size: 0.6em;
+  text-align: center;
+}

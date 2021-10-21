@@ -1,22 +1,22 @@
 /* Caption */
 .caption {
   position: absolute;
-  transform: rotate(-10deg);
+  transform: rotate(-4deg);
   width: 60%;
-  left: 40%;
-  top: 30%;
+  left: 35%;
+  top: 35%;
   letter-spacing: .05em;
   text-align: left;
 }
 
 .caption h1 {
-  color: #F44788;
+  color: #ff2277;
   margin: 0;
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
 
 .caption p {
   margin: 1% 0;
-  font-size: 1.1vw;
+  font-size: 1.5vw;
   font-weight: 700;
 }

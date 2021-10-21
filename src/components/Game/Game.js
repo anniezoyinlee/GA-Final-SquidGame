@@ -78,6 +78,7 @@ function Game() {
           : 
           <main className='buttons'>
             <button className='playBtn' onClick={()=>handleStart()}>Play</button>
+            <Link to="/">Quit</Link>
           </main>
         } 
         {levelDone ?

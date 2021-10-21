@@ -12,6 +12,7 @@
 .oddBtn {
   font-size: 2vw;
   margin: 5%;
+  color: #ff2277
 }
 
 .hand {
@@ -31,7 +32,7 @@
 
 h1.questionMark,
 h1.marbleAmount {
-  color: rgb(255, 0, 140);
+  color: #ff2277;
   font-size: 5vw;
   position: absolute;
   left: 7vw;
