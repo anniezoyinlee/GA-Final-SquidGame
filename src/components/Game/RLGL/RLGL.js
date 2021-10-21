@@ -116,7 +116,10 @@ function RLGL() {
               let lightSign = document.getElementById('lightSign')
               if (lightSign.innerText === 'Red Light') {
                 setLife(life - 1)
-                setMinutes(10)
+                setMinutes(5)
+                setSeconds(0)
+                console.log(life)
+                console.log(minutes, seconds)
               } else if (lightSign.innerText === 'Green Light') {
                 movePlayerRight001(e)
               } 

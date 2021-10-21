@@ -22,11 +22,9 @@ function Game() {
   const lifeValue = useMemo(() => ({life, setLife}), [life, setLife])
 
   // Timer
-  const [minutes, setMinutes] = useState(5)
-  const [seconds, setSeconds] = useState(0)
-  // const [minute, setMinute] = useState(minutes)
-  // const [second, setSecond] = useState(seconds)
+  const [minutes, setMinutes] = useState(2)
   const minutesValue = useMemo(() => ({minutes, setMinutes}), [minutes, setMinutes])
+  const [seconds, setSeconds] = useState(0)
   const secondsValue = useMemo(() => ({seconds, setSeconds}), [seconds, setSeconds])
 
   // Red Light, Green Light
@@ -61,7 +59,7 @@ function Game() {
   return (
     <div className="gameContainer">
       <div className='screen'>
-        <Timer min={minutes} sec={seconds} />
+        <Timer min={minutes} sec={seconds} setMin={setMinutes} setSec={setSeconds} />
         <Route path='/game/rlgl' render={() => <Caption title={titleRLGL} rules={rulesRLGL} /> } />
         <Route path='/game/dalgona' render={() => <Caption title={titleDalgona} rules={rulesDalgona} />} />
         <Route path='/game/tow' render={() => <Caption title={titleToW} rules={rulesToW} />} />

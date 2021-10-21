@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import './Timer.css';
 
 // reference: https://www.codegrepper.com/code-examples/javascript/react+countdown+timer+minutes+seconds
-const Timer = ({min, sec}) => {
-  const initialMinute = min
-  const initialSeconds = sec
-  const [ minutes, setMinutes ] = useState(initialMinute);
-  const [ seconds, setSeconds ] =  useState(initialSeconds);
+const Timer = ({min, sec, setMin, setSec}) => {
 
   useEffect(()=>{
     let myInterval = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
+      if (sec > 0) {
+        setSec(sec - 1);
       } 
-      if (seconds === 0) {
-        if (minutes === 0) {
+      if (sec === 0) {
+        if (min === 0) {
           clearInterval(myInterval)
         } else {
-          setMinutes(minutes - 1);
-          setSeconds(59);
+          setMin(min - 1);
+          setSec(59);
         }
       } 
     }, 1000)
@@ -36,9 +32,9 @@ const Timer = ({min, sec}) => {
 
       <div className='timerScreen'>
         <div className='timer'>
-          { minutes === 0 && seconds === 0
+          { min === 0 && sec === 0
             ? <h1>00:00</h1> 
-            : <h1>{minutes < 10 ?  `0${minutes}` : minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+            : <h1>{min < 10 ?  `0${min}` : min}:{sec < 10 ?  `0${sec}` : sec}</h1> 
           }
         </div>
       </div>
