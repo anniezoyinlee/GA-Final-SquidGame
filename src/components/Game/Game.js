@@ -39,8 +39,10 @@ function Game() {
   let titleTGSS = "The Glass Stepping Stones"
   let rulesTGSS = "Choose top or bottom glass to cross the bridge"
  
+  // Start button, only show before a game starts
   const [start, setStart] = useState(false)
-  const [levelDone, setLevelDone] = useState(true)
+  // Next button, only show after a game is completed
+  const [levelDone, setLevelDone] = useState(false)
 
   function handleStart() {
     setStart(!start)
@@ -59,17 +61,6 @@ function Game() {
         <Route path='/game/tow' render={() => <Caption title={titleToW} rules={rulesToW} />} />
         <Route path='/game/marbles' render={() => <Caption title={titleMarbles} rules={rulesMarbles} />} />
         <Route path='/game/tgss' render={() => <Caption title={titleTGSS} rules={rulesTGSS} />} />
-        {levelDone ?
-        <div className='buttons'>
-          <Route path='/game/rlgl' render={() => <Link to="/game/dalgona">Next</Link> } />
-          <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
-          <Route path='/game/tow' render={() => <Link to="/game/marbles">Next</Link> } />
-          <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
-          <Route path='/game/tgss' render={() => <Link to="/">Next</Link> } />
-        </div>
-        :
-        null
-        }
         
         <h1 className='life'>Life: {life}</h1>
       </div>
@@ -85,12 +76,21 @@ function Game() {
             <Route exact path='/game/tgss' component={TGSS} />
           </main>
           : 
-          <main className='gameArea'>
-            <div className='buttons'>
-              <button onClick={()=>handleStart()}>Play</button>
-            </div>
+          <main className='buttons'>
+            <button className='playBtn' onClick={()=>handleStart()}>Play</button>
           </main>
         } 
+        {levelDone ?
+        <main className='buttons'>
+          <Route path='/game/rlgl' render={() => <Link to="/game/dalgona">Next</Link> } />
+          <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
+          <Route path='/game/tow' render={() => <Link to="/game/marbles">Next</Link> } />
+          <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
+          <Route path='/game/tgss' render={() => <Link to="/">Next</Link> } />
+        </main>
+        :
+        null
+        }
         
       </LifeContext.Provider>
 

@@ -14,15 +14,20 @@
   position: relative;
 }
 
-.buttons {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
 .gameArea {
   height: 25vw;
+}
+
+.buttons {
+  display: flex;
+  height: 25vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.playBtn {
+  font-size: 2em;
+  z-index: 1;
 }
 
 .life {
