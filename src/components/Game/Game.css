@@ -1,5 +1,28 @@
+/* Game */
+.gameContainer {
+  width: 100%;
+  height: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.screen {
+  width: 100%;
+  height: 20vw;
+  display: block;
+  position: relative;
+}
+
+.buttons {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
 .gameArea {
-  display: none;
+  height: 25vw;
 }
 
 .life {
@@ -8,3 +31,4 @@
   left: 1%;
   font-size: 1.2em;
 }
+

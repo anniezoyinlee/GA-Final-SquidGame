@@ -1,5 +1,8 @@
 import React, { useState, useMemo } from "react";
 import { Route, Link } from 'react-router-dom'
+import { LifeContext } from "./LifeContext";
+
+// components
 import Caption from './Caption/Caption';
 import Timer from './Timer/Timer';
 import RLGL from './RLGL/RLGL'
@@ -7,8 +10,9 @@ import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
 import Marbles from './Marbles/Marbles'
 import TGSS from './TGSS/TGSS'
+
+// css
 import './Game.css'
-import { LifeContext } from "./LifeContext";
 
 function Game() {
   // Life count
@@ -35,17 +39,19 @@ function Game() {
   let titleTGSS = "The Glass Stepping Stones"
   let rulesTGSS = "Choose top or bottom glass to cross the bridge"
  
-  const [canStart, setCanStart] = useState(true)
+  const [start, setStart] = useState(false)
+  const [levelDone, setLevelDone] = useState(true)
 
   function handleStart() {
-    setCanStart(!canStart)
+    setStart(!start)
   }
 
-  // if ()
+  function handleLevelDone() {
+    setLevelDone(!levelDone)
+  }
 
   return (
     <div className="gameContainer">
-      {canStart ? <button onClick={()=>handleStart()}>Start</button> : 'this is false'}
       <div className='screen'>
         <Timer min={minute} sec={second} />
         <Route path='/game/rlgl' render={() => <Caption title={titleRLGL} rules={rulesRLGL} /> } />
@@ -53,31 +59,39 @@ function Game() {
         <Route path='/game/tow' render={() => <Caption title={titleToW} rules={rulesToW} />} />
         <Route path='/game/marbles' render={() => <Caption title={titleMarbles} rules={rulesMarbles} />} />
         <Route path='/game/tgss' render={() => <Caption title={titleTGSS} rules={rulesTGSS} />} />
+        {levelDone ?
         <div className='buttons'>
-          <button onClick={()=>handleStart()}>Start</button>
           <Route path='/game/rlgl' render={() => <Link to="/game/dalgona">Next</Link> } />
           <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
           <Route path='/game/tow' render={() => <Link to="/game/marbles">Next</Link> } />
           <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
           <Route path='/game/tgss' render={() => <Link to="/">Next</Link> } />
         </div>
+        :
+        null
+        }
+        
         <h1 className='life'>Life: {life}</h1>
-        {/* <Route path='/game/rlgl' render={() => <Life life={lifeRLGL} /> } />
-        <Route path='/game/dalgona' render={() => <Life life={lifeDalgona} /> } />
-        <Route path='/game/tow' render={() => <Life life={lifeToW} /> } />
-        <Route path='/game/marbles' render={() => <Life life={lifeMarbles} /> } />
-        <Route path='/game/tgss' render={() => <Life life={lifeTGSS} /> } /> */}
       </div>
       
       <LifeContext.Provider value={lifeValue}>
-        <main className='gameArea'>
-          {/* Setting route to each pages */}
-          <Route exact path='/game/rlgl' component={RLGL} />
-          <Route exact path='/game/dalgona' component={Dalgona} />
-          <Route exact path='/game/tow' component={ToW} />
-          <Route exact path='/game/marbles' component={Marbles} />
-          <Route exact path='/game/tgss' component={TGSS} />
-        </main>
+        {start ? 
+          <main className='gameArea'>
+            {/* Setting route to each pages */}
+            <Route exact path='/game/rlgl' component={RLGL} />
+            <Route exact path='/game/dalgona' component={Dalgona} />
+            <Route exact path='/game/tow' component={ToW} />
+            <Route exact path='/game/marbles' component={Marbles} />
+            <Route exact path='/game/tgss' component={TGSS} />
+          </main>
+          : 
+          <main className='gameArea'>
+            <div className='buttons'>
+              <button onClick={()=>handleStart()}>Play</button>
+            </div>
+          </main>
+        } 
+        
       </LifeContext.Provider>
 
     </div>
