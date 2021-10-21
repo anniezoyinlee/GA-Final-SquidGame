@@ -23,7 +23,7 @@ const AddName = () => {
   
   return (
     <form onSubmit={onSubmit}>
-      <div>
+      <div className='nameForm'>
         <h4>Enter Your Name</h4>
         <label>Your Name</label>
         <input type='text' value={name} onChange={e => setName(e.currentTarget.value)}></input>

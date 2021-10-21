@@ -53,7 +53,6 @@ function Rank() {
     <div className="rank">
       <button onClick={() => history.goBack()}>Go Back</button>
 
-      
       <div className='leaderboard'>
         <AddName />
         <h1>Rank</h1>
@@ -62,7 +61,7 @@ function Rank() {
           <li key={life.id}>
             <div className='name-entry'>
               {life.name}
-              <code> {life.score}</code>
+              <span> {life.score}</span>
             </div>
           </li>
           )}

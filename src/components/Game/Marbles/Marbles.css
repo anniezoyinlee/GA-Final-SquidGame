@@ -5,12 +5,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 25vw;
+  height: 20vw;
 }
 
 .evenBtn,
 .oddBtn {
-  height: 10vw;
   font-size: 2vw;
   margin: 5%;
 }

@@ -1,26 +1,21 @@
 /* Tog of War */
 .tow {
   position: relative;
-  height: 25vw;
+  height: 20vw;
   display: flex;
   flex-direction: column; 
 }
 
-.button {
-  height: 10vw;
-}
-
-.pullBtn{
-  position: absolute;
-  left: 15%;
-  top: 15%;
+.pullBtn {
+  position: relative;
   border: rgb(255, 0, 100) .5vw solid;
   border-radius: 5%;
   background-color: rgba(255, 255, 255, 0);
   color: rgb(255, 0, 100) ;
-  font-size: 2vw;
+  font-size: 1.5vw;
   font-weight: 700;
   padding: 1%;
+  margin: 1% auto;
 }
 
 .pullBtn:hover {
@@ -28,10 +23,10 @@
 }
 
 .view {
-  display: flex;
-  height: 15vw;
   position: relative;
+  display: flex;
   flex-direction: row; 
+  height: 15vw;
 }
 
 .platform {
@@ -72,7 +67,7 @@
   width: 80%;
   height: 10vw;
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 10%
 }
 
@@ -86,14 +81,14 @@
   z-index: 1;
 }
 
-.players {
+.theTow .players {
   display: flex;
   flex-direction: row;
   position: absolute;
   left: 15%;
 }
 
-.enemies {
+.theTow .enemies {
   display: flex;
   flex-direction: row;
   position: absolute;

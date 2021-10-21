@@ -1,7 +1,20 @@
 /* Rank */
-
 .rank {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
+  font-size: 2vw;
+}
+
+.rank button {
+  position: absolute;
+  left: 0;
+}
+
+.leaderboard {
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 5%;
 }
