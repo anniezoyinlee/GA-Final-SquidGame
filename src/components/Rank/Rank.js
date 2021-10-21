@@ -53,7 +53,9 @@ function Rank() {
     <div className="rank">
       <button onClick={() => history.goBack()}>Go Back</button>
 
+      
       <div className='leaderboard'>
+        <AddName />
         <h1>Rank</h1>
         <ol>
           {lives.map((life) => 
@@ -65,8 +67,6 @@ function Rank() {
           </li>
           )}
         </ol>
-
-        <AddName />
       </div>
     </div>
   );
@@ -75,3 +75,6 @@ function Rank() {
 export default Rank;
 
 
+// connect life count to life in rank
+// only show name enter form when the game is finished
+// hide the form after name and score show on chart
