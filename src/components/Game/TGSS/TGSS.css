@@ -8,10 +8,18 @@
   justify-content: space-around;
 }
 
+.players {
+  position: absolute;
+  left: 0;
+}
+
+.players .player {
+  margin: 2%;
+}
 
 .bridge{
   background: white;
-  border-width: 5px 0;
+  border-width: .5vw 0;
   border-style: solid;
   border-color: rgba(255, 0, 120, 0.8);
   width: 45vw;

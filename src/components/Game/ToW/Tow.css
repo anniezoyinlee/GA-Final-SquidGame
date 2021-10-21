@@ -12,13 +12,13 @@
 
 .pullBtn{
   position: absolute;
-  left: 30%;
+  left: 15%;
   top: 15%;
-  border: rgb(255, 0, 100) 5px solid;
-  border-radius: 20px;
+  border: rgb(255, 0, 100) .5vw solid;
+  border-radius: 5%;
   background-color: rgba(255, 255, 255, 0);
   color: rgb(255, 0, 100) ;
-  font-size: 1.5em;
+  font-size: 2vw;
   font-weight: 700;
   padding: 1%;
 }
@@ -42,15 +42,15 @@
 .top {
   background-color: rgba(90, 100, 90, .7);
   height: 5vw;
-  border-top: rgba(255, 200, 0, .9) 20px solid;
-  border-bottom: rgba(255, 200, 0, 0.9) 5px solid;
+  border-top: rgba(255, 200, 0, .9) 2vw solid;
+  border-bottom: rgba(255, 200, 0, 0.9) .5vw solid;
 }
 
 .bottom {
   background-color: rgba(90, 100, 90, .7);
   height: 5vw;
-  border-top: rgba(255, 200, 0, .9) 5px solid;
-  border-bottom: rgba(255, 200, 0, .9) 20px solid;
+  border-top: rgba(255, 200, 0, .9) .5vw solid;
+  border-bottom: rgba(255, 200, 0, .9) 2vw solid;
 }
 
 .left {
@@ -68,7 +68,7 @@
 }
 
 .theTow {
-  border: 5px solid black;
+  border: .5vw solid black;
   width: 80%;
   height: 10vw;
   position: absolute;
@@ -79,7 +79,7 @@
 .rope {
   position: absolute;
   top: 32%;
-  border-top: 3px pink solid;
+  border-top: .3vw pink solid;
   height: 0;
   width: 100%;
   margin-top: -2%;

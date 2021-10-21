@@ -13,7 +13,7 @@
 
 .ground {
   background-color: rgb(255, 208, 138);
-  border-right: rgba(255, 0, 111, 0.6) solid 5px;
+  border-right: rgba(255, 0, 111, 0.6) solid .5vw;
   width: 100%;
   height: 25vw;
   padding-top: .1%;
@@ -33,11 +33,12 @@
 .playWindow-right {
   width: 25%;
   margin-bottom: 2%;
+  margin-left: 1%;
 }
 
 .lightSign h1 {
   text-align: center;
-  font-size: 1.8em;
+  font-size: 2vw;
   pointer-events: none;
 }
 

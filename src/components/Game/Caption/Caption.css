@@ -1,9 +1,8 @@
 /* Caption */
 .caption {
-  position: relative;
+  position: absolute;
   transform: rotate(-10deg);
   width: 60%;
-  position: absolute;
   left: 40%;
   top: 30%;
   letter-spacing: .05em;

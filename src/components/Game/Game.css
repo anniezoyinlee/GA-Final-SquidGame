@@ -26,14 +26,13 @@
 }
 
 .playBtn {
-  font-size: 2em;
-  z-index: 1;
+  font-size: 6vw;
 }
 
 .life {
   position: absolute;
-  top: 5%;
+  top: 0;
   left: 1%;
-  font-size: 1.2em;
+  font-size: 2vw;
 }
 

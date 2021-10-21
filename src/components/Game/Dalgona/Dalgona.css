@@ -1,17 +1,16 @@
 /* Dalgona Candy */
 .dalgona {
   position: relative;
-  top: 50px;
 }
 
 .candy {
-  width: 300px;
-  height: 300px;
   position: absolute;
+  width: 20vw;
+  height: 20vw;
   left: 20vw;
   top: 0;
   background-color: rgb(240, 180, 80);
-  border-radius: 150px;
+  border-radius: 50%;
   filter: blur(1px);
 }
 
@@ -22,14 +21,14 @@
 /* circle slice */
 /* reference https://newbedev.com/segments-in-a-circle-using-css3 */
 .circleLine {
-  position: absolute;
+  position: relative;
   border: 1px solid rgba(250, 200, 120, .5);
-  padding: 0;
-  width: 175px;
-  height: 175px;
-  left: 24.5vw;
-  top: 3.5vw;
   border-radius: 50%;
+  padding: 0;
+  width: 12vw;
+  height: 12vw;
+  left: 24vw;
+  top: 4vw;
   list-style: none;
   overflow: hidden;
   filter: blur(1px);
@@ -135,14 +134,14 @@
 }
 
 .circleShape {
-  width: 167px;
-  height: 167px;
   position: absolute;
-  left: 24.75vw;
-  top: 4.85vw;
+  width: 11.5vw;
+  height: 11.5vw;
+  left: 24.3vw;
+  top: 4.3vw;
   background-color: rgb(240, 180, 80);
   filter: blur(1px);
-  border-radius: 150px;
+  border-radius: 50%;
 }
 
 .circleShape:hover {
