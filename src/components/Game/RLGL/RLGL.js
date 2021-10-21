@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext }  from 'react'
 import { LifeContext } from '../LifeContext';
+import { MinutesContext } from '../MinutesContext';
+import { SecondsContext } from '../SecondsContext';
 import './RLGL.css';
 
 const lights = ['Red Light', 'Green Light']
@@ -28,6 +30,8 @@ function handleInterval() {
   
 function RLGL() {
   const {life, setLife} = useContext(LifeContext)
+  const {minutes, setMinutes} = useContext(MinutesContext)
+  const {seconds, setSeconds} = useContext(SecondsContext)
 
   const [playerPass, setPlayerPass] = useState(0)
   const players = document.querySelectorAll('.player')
@@ -112,6 +116,7 @@ function RLGL() {
               let lightSign = document.getElementById('lightSign')
               if (lightSign.innerText === 'Red Light') {
                 setLife(life - 1)
+                setMinutes(10)
               } else if (lightSign.innerText === 'Green Light') {
                 movePlayerRight001(e)
               } 

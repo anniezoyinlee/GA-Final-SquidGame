@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from "react";
 import { Route, Link } from 'react-router-dom'
 import { LifeContext } from "./LifeContext";
+import { MinutesContext } from "./MinutesContext";
+import { SecondsContext } from "./SecondsContext";
 
 // components
 import Caption from './Caption/Caption';
@@ -20,8 +22,12 @@ function Game() {
   const lifeValue = useMemo(() => ({life, setLife}), [life, setLife])
 
   // Timer
-  const [minute, setMinute] = useState(5)
-  const [second, setSecond] = useState(0)
+  const [minutes, setMinutes] = useState(5)
+  const [seconds, setSeconds] = useState(0)
+  // const [minute, setMinute] = useState(minutes)
+  // const [second, setSecond] = useState(seconds)
+  const minutesValue = useMemo(() => ({minutes, setMinutes}), [minutes, setMinutes])
+  const secondsValue = useMemo(() => ({seconds, setSeconds}), [seconds, setSeconds])
 
   // Red Light, Green Light
   let titleRLGL = "Red Light, Green Light"
@@ -55,7 +61,7 @@ function Game() {
   return (
     <div className="gameContainer">
       <div className='screen'>
-        <Timer min={minute} sec={second} />
+        <Timer min={minutes} sec={seconds} />
         <Route path='/game/rlgl' render={() => <Caption title={titleRLGL} rules={rulesRLGL} /> } />
         <Route path='/game/dalgona' render={() => <Caption title={titleDalgona} rules={rulesDalgona} />} />
         <Route path='/game/tow' render={() => <Caption title={titleToW} rules={rulesToW} />} />
@@ -66,37 +72,44 @@ function Game() {
       </div>
       
       <LifeContext.Provider value={lifeValue}>
-        {start ? 
-          <main className='gameArea'>
-            {/* Setting route to each pages */}
-            <Route exact path='/game/rlgl' component={RLGL} />
-            <Route exact path='/game/dalgona' component={Dalgona} />
-            <Route exact path='/game/tow' component={ToW} />
-            <Route exact path='/game/marbles' component={Marbles} />
-            <Route exact path='/game/tgss' component={TGSS} />
-          </main>
-          : 
-          <main className='buttons'>
-            <button className='playBtn' onClick={()=>handleStart()}>Play</button>
-            <Link to="/">Quit</Link>
-          </main>
-        } 
-        {levelDone ?
-        <main className='buttons'>
-          <Route path='/game/rlgl' render={() => <Link to="/game/dalgona">Next</Link> } />
-          <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
-          <Route path='/game/tow' render={() => <Link to="/game/marbles">Next</Link> } />
-          <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
-          <Route path='/game/tgss' render={() => <Link to="/">Next</Link> } />
-        </main>
-        :
-        null
-        }
-        
+        <MinutesContext.Provider value={minutesValue}>
+          <SecondsContext.Provider value={secondsValue}>
+            {start ? 
+              <main className='gameArea'>
+                {/* Setting route to each pages */}
+                <Route exact path='/game/rlgl' component={RLGL} />
+                <Route exact path='/game/dalgona' component={Dalgona} />
+                <Route exact path='/game/tow' component={ToW} />
+                <Route exact path='/game/marbles' component={Marbles} />
+                <Route exact path='/game/tgss' component={TGSS} />
+              </main>
+              : 
+              <main className='buttons'>
+                <button className='playBtn' onClick={()=>handleStart()}>Play</button>
+                <Link to="/">Quit</Link>
+              </main>
+            } 
+            {levelDone ?
+            <main className='buttons'>
+              <Route path='/game/rlgl' render={() => <Link to="/game/dalgona">Next</Link> } />
+              <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
+              <Route path='/game/tow' render={() => <Link to="/game/marbles">Next</Link> } />
+              <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
+              <Route path='/game/tgss' render={() => <Link to="/">Next</Link> } />
+            </main>
+            :
+            null
+            }
+          </SecondsContext.Provider>
+        </MinutesContext.Provider>
       </LifeContext.Provider>
-
     </div>
   );
 }
 
 export default Game;
+
+// timer go 0 finish the game
+// reach win condition finish the game
+// finish game show next button
+// new level timer reset
