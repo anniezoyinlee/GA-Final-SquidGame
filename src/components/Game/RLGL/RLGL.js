@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext }  from 'react'
+import { Link } from 'react-router-dom'
 import { LifeContext } from '../LifeContext';
 import { MinutesContext } from '../MinutesContext';
 import { SecondsContext } from '../SecondsContext';
@@ -32,10 +33,11 @@ function RLGL() {
   const {life, setLife} = useContext(LifeContext)
   const {minutes, setMinutes} = useContext(MinutesContext)
   const {seconds, setSeconds} = useContext(SecondsContext)
+  // Next button, only show after a game is completed
+  const [levelDone, setLevelDone] = useState(false)
 
   const [playerPass, setPlayerPass] = useState(0)
   const players = document.querySelectorAll('.player')
-  console.log(playerPass, players.length)
 
   // Setting interval
   // reference: https://stackoverflow.com/questions/53859601/how-do-i-clearinterval-on-click-with-react-hooks
@@ -51,12 +53,21 @@ function RLGL() {
 
   const stopInterval = useInterval(handleInterval, 2000 + Math.floor(Math.random()*1000));
 
-  // gameover condition
-  if (playerPass === players.length) {
-    //Clearing interval
-    stopInterval()
-    console.log('gameOver')
+  function handleLevelDone() {
+    setLevelDone(!levelDone)
   }
+
+  const checkWin = () => {
+    console.log(playerPass, players.length)
+    // Somehow playerPass doesn't update after the first piece pass endLine
+    if (playerPass + 1 >= players.length && players.length !== 0) {
+      handleLevelDone()
+      //Clearing interval
+      stopInterval()
+      console.log('gameOver')
+    }
+  }
+ 
 
   // players' original location
   const [offsetRight001, setOffsetRight001] = useState(0);
@@ -72,7 +83,7 @@ function RLGL() {
     };
   }
 
-  let playerSpeed = 2 + Math.random();
+  let playerSpeed = 12 + Math.random();
   function movePlayerRight001(e) {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
     setOffsetRight001(offsetRight001 + playerSpeed);
@@ -108,50 +119,60 @@ function RLGL() {
   }
 
   return (
-    <div className="rlgl">
-      <div className='playWindow-left'>
-        <div className='ground'>
-          <div id='player1' className='player' 
-            onClick={(e) => {
-              let lightSign = document.getElementById('lightSign')
-              if (lightSign.innerText === 'Red Light') {
-                setLife(life - 1)
-                setMinutes(5)
-                setSeconds(0)
-                console.log(life)
-                console.log(minutes, seconds)
-              } else if (lightSign.innerText === 'Green Light') {
-                movePlayerRight001(e)
-              } 
-            }} 
-            style={{transform: `translateX(${offsetRight001}vw)`}}></div>
-          <div id='player2' className='player' 
-            onClick={(e) => {
-              let lightSign = document.getElementById('lightSign')
-              if (lightSign.innerText === 'Red Light') {
-                setLife(life - 1)
-              } else if (lightSign.innerText === 'Green Light') {
-                movePlayerRight002(e)
-              } 
-            }} 
-            style={{transform: `translateX(${offsetRight002}vw)`}}></div>
-          <div id='player3' className='player' 
-            onClick={(e) => {
-              let lightSign = document.getElementById('lightSign')
-              if (lightSign.innerText === 'Red Light') {
-                setLife(life - 1)
-              } else if (lightSign.innerText === 'Green Light') {
-                movePlayerRight003(e)
-              } 
-            }} 
-            style={{transform: `translateX(${offsetRight003}vw)`}}></div>
+    <div>
+      {levelDone ?
+        <main className='buttons'>
+          <Link to="/game/dalgona">Next</Link> 
+        </main>
+        :
+        <div className="rlgl">
+          <div className='playWindow-left'>
+            <div className='ground'>
+              <div id='player1' className='player' 
+                onClick={(e) => {
+                  let lightSign = document.getElementById('lightSign')
+                  if (lightSign.innerText === 'Red Light') {
+                    setLife(life - 1)
+                    checkWin() 
+                  } else if (lightSign.innerText === 'Green Light') {
+                    movePlayerRight001(e)
+                    checkWin() 
+                  } 
+                }} 
+                style={{transform: `translateX(${offsetRight001}vw)`}}></div>
+              <div id='player2' className='player' 
+                onClick={(e) => {
+                  let lightSign = document.getElementById('lightSign')
+                  if (lightSign.innerText === 'Red Light') {
+                    setLife(life - 1)
+                    checkWin() 
+                  } else if (lightSign.innerText === 'Green Light') {
+                    movePlayerRight002(e)
+                    checkWin() 
+                  }
+                }} 
+                style={{transform: `translateX(${offsetRight002}vw)`}}></div>
+              <div id='player3' className='player' 
+                onClick={(e) => {
+                  let lightSign = document.getElementById('lightSign')
+                  if (lightSign.innerText === 'Red Light') {
+                    setLife(life - 1)
+                    checkWin() 
+                  } else if (lightSign.innerText === 'Green Light') {
+                    movePlayerRight003(e)
+                    checkWin() 
+                  } 
+                }} 
+                style={{transform: `translateX(${offsetRight003}vw)`}}></div>
+            </div>
+          </div>
+          <div className='playWindow-right'>
+            <div className='lightSign'>
+              <h1 id='lightSign' className='nolight'>No Light</h1>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className='playWindow-right'>
-        <div className='lightSign'>
-          <h1 id='lightSign' className='nolight'>No Light</h1>
-        </div>
-      </div>
+      }
     </div>
   );
 }

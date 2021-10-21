@@ -22,7 +22,7 @@ function Game() {
   const lifeValue = useMemo(() => ({life, setLife}), [life, setLife])
 
   // Timer
-  const [minutes, setMinutes] = useState(2)
+  const [minutes, setMinutes] = useState(0)
   const minutesValue = useMemo(() => ({minutes, setMinutes}), [minutes, setMinutes])
   const [seconds, setSeconds] = useState(0)
   const secondsValue = useMemo(() => ({seconds, setSeconds}), [seconds, setSeconds])
@@ -46,15 +46,16 @@ function Game() {
   // Start button, only show before a game starts
   const [start, setStart] = useState(false)
   // Next button, only show after a game is completed
-  const [levelDone, setLevelDone] = useState(false)
+  // const [levelDone, setLevelDone] = useState(true)
 
   function handleStart() {
     setStart(!start)
+    setMinutes(5)
   }
 
-  function handleLevelDone() {
-    setLevelDone(!levelDone)
-  }
+  // function handleLevelDone() {
+  //   setLevelDone(!levelDone)
+  // }
 
   return (
     <div className="gameContainer">
@@ -87,7 +88,7 @@ function Game() {
                 <Link to="/">Quit</Link>
               </main>
             } 
-            {levelDone ?
+            {/* {levelDone ?
             <main className='buttons'>
               <Route path='/game/rlgl' render={() => <Link to="/game/dalgona">Next</Link> } />
               <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
@@ -97,7 +98,7 @@ function Game() {
             </main>
             :
             null
-            }
+            } */}
           </SecondsContext.Provider>
         </MinutesContext.Provider>
       </LifeContext.Provider>

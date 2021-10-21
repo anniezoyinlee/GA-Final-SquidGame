@@ -27,27 +27,9 @@ function useLives() {
   return lives
 }
 
-function Rank() {
+function Rank({score}) {
   const history = useHistory();
   const lives = useLives();
-  const [name, setName] = useState('')
-  const [score, setScore] = useState('')
-
-  function onSubmit(e) {
-    e.preventDefault()
-
-    firebase
-      .firestore()
-      .collection(lives)
-      .add({
-        name,
-        score: parseInt(score)
-      })
-      .then(() => {
-        setName('')
-        setScore('')
-      })
-  }
 
   return (
     <div className="rank">
@@ -77,3 +59,4 @@ export default Rank;
 // connect life count to life in rank
 // only show name enter form when the game is finished
 // hide the form after name and score show on chart
+// last enter showing on the top
