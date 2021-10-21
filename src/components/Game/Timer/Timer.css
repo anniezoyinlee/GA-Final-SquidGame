@@ -1,9 +1,5 @@
 
 /* Timer */
-* {
-  border: 1px solid gold;
-}
-
 .pinkGuy {
   position: relative;
   width: 12vw;
@@ -16,7 +12,7 @@
   width: 55%;
   height: 60%;
   background: black;
-  border-width: 10px 8px 1px 8px;
+  border-width: 1vw .8vw .1vw .8vw;
   box-sizing: border-box;
   border-style: solid;
   border-color:rgba(255, 0, 120, .9);
@@ -27,22 +23,22 @@
 }
 
 .face {
-  width: 50px;
-  height: 50px;
+  width: 3.5vw;
+  height: 3.5vw;
   background: black;
-  border: white 4px solid;
+  border: white .25vw solid;
   opacity: .95;
   border-radius: 50%;
   position: absolute;
   top: 5%;
-  left: 14%;
+  left: 11%;
 }
 
 .timerScreen {
-  width: 125px;
-  height: 70px;
+  width: 8.5vw;
+  height: 5vw;
   background: rgba(0, 0, 0, .8);
-  border-width: 8px 5px;
+  border-width: .8vw .5vw;
   border-style: solid;
   border-color:rgba(255, 0, 120, .9);
   border-radius: 5%;
