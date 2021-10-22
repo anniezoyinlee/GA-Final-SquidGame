@@ -1,5 +1,5 @@
 ## Project Description
-This app is a game center for some mini games. Game ideas are from Squid Game, a South Korean survival drama television series streaming on Netflix. This app is designed to have five games from the show: 
+This app is a game center for some mini games. Game ideas are from Squid Game, a South Korean survival drama television series streaming on Netflix. This app is designed to have five games from the tv show: 
 1. Red Light, Green Light
 2. Dalgona Candy
 3. Tug of War
@@ -7,13 +7,13 @@ This app is a game center for some mini games. Game ideas are from Squid Game, a
 5. The Glass Stepping Stones
 
 For now only Red Light, Green Light and Dalgona Candy are available to play.
-![image](https://imgur.com/5ObOp85.png)
-[Click to play the game]https://final-squidgame.herokuapp.com/
+[Click to play the game](https://final-squidgame.herokuapp.com/)
+[![image](https://imgur.com/5ObOp85.png)](https://final-squidgame.herokuapp.com/ )
 
-Check the rest of games demo(Game functions updating)
-[Tug of War]https://final-squidgame.herokuapp.com/game/tow 
-[Marbles]https://final-squidgame.herokuapp.com/game/marbles
-[The Glass Stepping Stones]https://final-squidgame.herokuapp.com/game/tgss
+Check the rest of games demo(Game functions will be updated)
+- [Tug of War](https://final-squidgame.herokuapp.com/game/tow)
+- [Marbles](https://final-squidgame.herokuapp.com/game/marbles)
+- [The Glass Stepping Stones](https://final-squidgame.herokuapp.com/game/tgss)
 
 ## Tech stack 
 ### frontend
