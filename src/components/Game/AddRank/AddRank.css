@@ -17,6 +17,10 @@
   margin: 5% auto 0 auto;
 }
 
+.addrank h4 {
+  margin: 0 0 2% 0;
+}
+
 .rankContent {
   display: flex;
   flex-direction: row;
@@ -25,23 +29,28 @@
   margin-top: 5%;
 }
 
-.rankContent form {
-  width: 50%;
+.rankContent button {
+  padding: 0;
+  margin: 0 25%;
 }
 
-.rankContent input {
+.nameForm {
+  width: 100%;
+}
+
+.nameForm input {
   width: 6em;
   height: 1.5em;
   font-size: 1em;
 }
 
+.addrank .leaderboard {
+  width: 50%;
+}
+
 .addrank ol {
   width: 50%;
   list-style-type: none;
-  margin: 0;
-}
-
-.addrank h4 {
   margin: 0;
 }
 

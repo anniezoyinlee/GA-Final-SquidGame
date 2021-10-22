@@ -77,7 +77,7 @@ function AddRank() {
             <h4>Enter Your Name</h4>
             <label>Your Name: </label>
             <input type='text' value={name} onChange={e => setName(e.currentTarget.value)}></input>
-            <p>Your Score: {life}</p>
+            <p>Life: {life}</p>
           </div>
           <button onClick={(e) => 
             {
