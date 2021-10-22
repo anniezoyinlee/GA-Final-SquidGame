@@ -1,15 +1,26 @@
 ## Project Description
-This app is a game center for some mini games. Game ideas are from Squid Game, a South Korean survival drama television series streaming on Netflix.
+This app is a game center for some mini games. Game ideas are from Squid Game, a South Korean survival drama television series streaming on Netflix. This app is designed to have five games from the show: 
+1. Red Light, Green Light
+2. Dalgona Candy
+3. Tug of War
+4. Marbles
+5. The Glass Stepping Stones
+
+For now only Red Light, Green Light and Dalgona Candy are available to play.
+![image](https://imgur.com/5ObOp85.png)
+[Click to play the game]https://final-squidgame.herokuapp.com/
+
+Check the rest of games demo(Game functions updating)
+[Tug of War]https://final-squidgame.herokuapp.com/game/tow 
+[Marbles]https://final-squidgame.herokuapp.com/game/marbles
+[The Glass Stepping Stones]https://final-squidgame.herokuapp.com/game/tgss
 
 ## Tech stack 
 ### frontend
 HTML
 CSS
 JavaScript
-React
-
-### backend
-Node
+React(New Technology: React Context)
 
 ### database
 Firebase(New Technology)
@@ -28,31 +39,3 @@ APP/Landing
 - Game_ToW
 - Game_Marbles
 - Game_TGSS
-
-## User stories
-### MVP Goals
-As a player, I want to click on the start button to start the first game
-As a player, I want to see the current score status on the game pages
-As a player, I want to see a next game button when I finish a game
-As a player, I want to click on the next game button to start the next game
-As a player, I want to click on the start button to start when I'm on a new game's page
-As a player, I want to click on the Home button to exit the game
-As a player, I want to see the restart button on the home page if I exit the game from the game page
-As a player, I want to click on the rank button to see the rank before a game starts and after a game is finished/lost
-As a player, I want to see a message that the game is finished when I finish all the games
-As a player, I want to enter my name for the rank when the game is finished
-As a player, I want to see my name on the updated rank page
-As a player, I want to see a home button on the rank page
-
-### Strength Goals
-As a player, I want to have a pretty UI
-
-## Wireframes
-Landing page
-![image](https://imgur.com/5ObOp85.png)
-Game Views
-![image](https://imgur.com/QHsrr1P.png)
-![image](https://imgur.com/1zjplVR.png)
-![image](https://imgur.com/nUPv9bf.png)
-![image](https://imgur.com/NbiGKkk.png)
-![image](https://imgur.com/4tvs0XL.png)

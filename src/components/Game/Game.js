@@ -51,17 +51,11 @@ function Game() {
  
   // Start button, only show before a game starts
   const [start, setStart] = useState(false)
-  // Next button, only show after a game is completed
-  // const [levelDone, setLevelDone] = useState(true)
 
   function handleStart() {
     setStart(!start)
     setMinutes(5)
   }
-
-  // function handleLevelDone() {
-  //   setLevelDone(!levelDone)
-  // }
 
   return (
     <div className="gameContainer">
