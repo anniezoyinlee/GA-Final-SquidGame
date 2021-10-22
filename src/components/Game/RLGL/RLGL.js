@@ -8,6 +8,7 @@ import './RLGL.css';
 const lights = ['Red Light', 'Green Light']
 let index = 0
 
+// Red light/Green light sign changes
 function changeLight() {
   index = index + 1;
   if (index === lights.length) {
@@ -30,14 +31,11 @@ function handleInterval() {
 }
   
 function RLGL() {
+  // Life count
   const {life, setLife} = useContext(LifeContext)
+  // Timer
   const {minutes, setMinutes} = useContext(MinutesContext)
   const {seconds, setSeconds} = useContext(SecondsContext)
-  // Next button, only show after a game is completed
-  const [levelDone, setLevelDone] = useState(false)
-
-  const [playerPass, setPlayerPass] = useState(0)
-  const players = document.querySelectorAll('.player')
 
   // Setting interval
   // reference: https://stackoverflow.com/questions/53859601/how-do-i-clearinterval-on-click-with-react-hooks
@@ -53,21 +51,28 @@ function RLGL() {
 
   const stopInterval = useInterval(handleInterval, 2000 + Math.floor(Math.random()*1000));
 
+  const [playerPass, setPlayerPass] = useState(0)
+  const players = document.querySelectorAll('.player')
+
+  // Next button, only show after a game is completed
+  const [levelDone, setLevelDone] = useState(false)
+
   function handleLevelDone() {
     setLevelDone(!levelDone)
   }
 
+  // Check if level is completed
   const checkWin = () => {
-    console.log(playerPass, players.length)
+    // console.log(playerPass, players.length)
     // Somehow playerPass doesn't update after the first piece pass endLine
     if (playerPass + 1 >= players.length && players.length !== 0) {
       handleLevelDone()
       //Clearing interval
       stopInterval()
-      console.log('gameOver')
+      setMinutes(0)
+      setSeconds(0)
     }
   }
- 
 
   // players' original location
   const [offsetRight001, setOffsetRight001] = useState(0);
@@ -83,11 +88,11 @@ function RLGL() {
     };
   }
 
-  let playerSpeed = 12 + Math.random();
+  let playerSpeed = 2 + Math.random();
   function movePlayerRight001(e) {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
     setOffsetRight001(offsetRight001 + playerSpeed);
-    console.log(getOffset(e.currentTarget).right, endLine)
+    // console.log(getOffset(e.currentTarget).right, endLine)
     
     if (getOffset(e.currentTarget).right > endLine) {
       setPlayerPass(playerPass + 1)
@@ -98,7 +103,7 @@ function RLGL() {
   function movePlayerRight002(e) {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
     setOffsetRight002(offsetRight002 + playerSpeed);
-    console.log(getOffset(e.currentTarget).right, endLine)
+    // console.log(getOffset(e.currentTarget).right, endLine)
 
     if (getOffset(e.currentTarget).right > endLine) {
       setPlayerPass(playerPass + 1)
@@ -110,7 +115,7 @@ function RLGL() {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
     setOffsetRight003(offsetRight003 + playerSpeed);
 
-    console.log(getOffset(e.currentTarget).right, endLine)
+    // console.log(getOffset(e.currentTarget).right, endLine)
     if (getOffset(e.currentTarget).right > endLine) {
       setPlayerPass(playerPass + 1)
       // unclickable after crossing the end line
@@ -128,6 +133,7 @@ function RLGL() {
         <div className="rlgl">
           <div className='playWindow-left'>
             <div className='ground'>
+              {/* Player 1 */}
               <div id='player1' className='player' 
                 onClick={(e) => {
                   let lightSign = document.getElementById('lightSign')
@@ -140,6 +146,7 @@ function RLGL() {
                   } 
                 }} 
                 style={{transform: `translateX(${offsetRight001}vw)`}}></div>
+              {/* Player 2 */}
               <div id='player2' className='player' 
                 onClick={(e) => {
                   let lightSign = document.getElementById('lightSign')
@@ -152,6 +159,7 @@ function RLGL() {
                   }
                 }} 
                 style={{transform: `translateX(${offsetRight002}vw)`}}></div>
+              {/* Player 3 */}
               <div id='player3' className='player' 
                 onClick={(e) => {
                   let lightSign = document.getElementById('lightSign')
