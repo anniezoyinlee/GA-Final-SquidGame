@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom'
 import { LifeContext } from "../../context/LifeContext";
 import { MinutesContext } from "../../context/MinutesContext";
 import { SecondsContext } from "../../context/SecondsContext";
+import { RankContext } from "../../context/RankContext";
 
 // components
 import Caption from './Caption/Caption';
@@ -12,6 +13,7 @@ import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
 import Marbles from './Marbles/Marbles'
 import TGSS from './TGSS/TGSS'
+import AddRank from './AddRank/AddRank'
 
 // css
 import './Game.css'
@@ -26,6 +28,10 @@ function Game() {
   const minutesValue = useMemo(() => ({minutes, setMinutes}), [minutes, setMinutes])
   const [seconds, setSeconds] = useState(0)
   const secondsValue = useMemo(() => ({seconds, setSeconds}), [seconds, setSeconds])
+
+  // Rank
+  const [rank, setRank] = useState(false)
+  const rankValue = useMemo(() => ({rank, setRank}), [rank, setRank])
 
   // Red Light, Green Light
   let titleRLGL = "Red Light, Green Light"
@@ -59,20 +65,24 @@ function Game() {
 
   return (
     <div className="gameContainer">
-      <div className='screen'>
-        <Timer min={minutes} sec={seconds} setMin={setMinutes} setSec={setSeconds} />
-        <Route path='/game/rlgl' render={() => <Caption title={titleRLGL} rules={rulesRLGL} /> } />
-        <Route path='/game/dalgona' render={() => <Caption title={titleDalgona} rules={rulesDalgona} />} />
-        <Route path='/game/tow' render={() => <Caption title={titleToW} rules={rulesToW} />} />
-        <Route path='/game/marbles' render={() => <Caption title={titleMarbles} rules={rulesMarbles} />} />
-        <Route path='/game/tgss' render={() => <Caption title={titleTGSS} rules={rulesTGSS} />} />
-        
-        <h1 className='life'>Life: {life}</h1>
-      </div>
-      
       <LifeContext.Provider value={lifeValue}>
-        <MinutesContext.Provider value={minutesValue}>
-          <SecondsContext.Provider value={secondsValue}>
+      <MinutesContext.Provider value={minutesValue}>
+      <SecondsContext.Provider value={secondsValue}>
+      <RankContext.Provider value={rankValue}>
+        {rank ? 
+          <Route exact path='/game/addrank' component={AddRank} />
+          :
+          <div>
+            <div className='screen'>
+              <Timer min={minutes} sec={seconds} setMin={setMinutes} setSec={setSeconds} />
+              <Route path='/game/rlgl' render={() => <Caption title={titleRLGL} rules={rulesRLGL} /> } />
+              <Route path='/game/dalgona' render={() => <Caption title={titleDalgona} rules={rulesDalgona} />} />
+              <Route path='/game/tow' render={() => <Caption title={titleToW} rules={rulesToW} />} />
+              <Route path='/game/marbles' render={() => <Caption title={titleMarbles} rules={rulesMarbles} />} />
+              <Route path='/game/tgss' render={() => <Caption title={titleTGSS} rules={rulesTGSS} />} />   
+              <h1 className='life'>Life: {life}</h1>
+            </div>
+        
             {start ? 
               <main className='gameArea'>
                 {/* Setting route to each pages */}
@@ -99,9 +109,11 @@ function Game() {
             :
             null
             } */}
-              
-          </SecondsContext.Provider>
-        </MinutesContext.Provider>
+          </div>
+        }
+      </RankContext.Provider>
+      </SecondsContext.Provider>
+      </MinutesContext.Provider>
       </LifeContext.Provider>
     </div>
   );

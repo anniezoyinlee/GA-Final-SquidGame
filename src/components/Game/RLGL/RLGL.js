@@ -54,9 +54,6 @@ function RLGL() {
   const [playerPass, setPlayerPass] = useState(0)
   const players = document.querySelectorAll('.player')
 
-  // Start button, only show before a game starts
-  const [start, setStart] = useState(true)
-
   // Next button, only show after a game is completed
   const [levelDone, setLevelDone] = useState(false)
 

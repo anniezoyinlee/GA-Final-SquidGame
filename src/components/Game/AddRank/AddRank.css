@@ -1,0 +1,44 @@
+/* Rank */
+.addrank {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2vw;
+}
+
+.addrank h1 {
+  color: #ff2277;
+  margin: 0;
+}
+
+.rankContent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.rankContent form {
+  width: 50%;
+}
+
+.rankContent input {
+  width: 6em;
+  height: 1.5em;
+  font-size: 1em;
+}
+
+.rankContent .leaderboard {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  margin: 0;
+}
+
+.leaderboard ol {
+  columns: 2;
+  list-style-type: none;
+  text-align: left;
+  margin: 10% auto;
+}

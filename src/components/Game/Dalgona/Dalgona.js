@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { LifeContext } from '../../../context/LifeContext';
 import { MinutesContext } from '../../../context/MinutesContext';
 import { SecondsContext } from '../../../context/SecondsContext';
+import { RankContext } from '../../../context/RankContext';
 import './Dalgona.css';
   
 function Dalgona() {
@@ -13,6 +14,13 @@ function Dalgona() {
   const {seconds, setSeconds} = useContext(SecondsContext)
   // Lines on candy that has been clicked
   const [clickedPiece, setClickedPiece] = useState([])
+
+  // show rank
+  const {rank, setRank} = useContext(RankContext)
+
+  function showRank() {
+    setRank(true)
+  }
 
   const clicked = (e) => {
     e.stopPropagation();
@@ -56,7 +64,9 @@ function Dalgona() {
       <div>
         {levelDone ?
           <main className='buttons'>
-            <Link className='rankBtn' to="/rank">Rank</Link> 
+            <Link onClick={() => showRank()}  className='rankBtn' to="/game/addrank">
+              Rank
+            </Link> 
           </main>
           :
           <div className="dalgona">
