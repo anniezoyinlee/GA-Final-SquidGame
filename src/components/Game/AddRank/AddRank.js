@@ -105,8 +105,4 @@ function AddRank() {
 
 export default AddRank;
 
-
-// connect life count to life in rank
-// only show name enter form when the game is finished
-// hide the form after name and score show on chart
 // last enter showing on the top

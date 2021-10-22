@@ -126,4 +126,6 @@ function Dalgona() {
   
 export default Dalgona;
 
-// timer 
+// timer goes 0 finish the game
+// Life goes down by the pieces not clicked * 10 when timer goes 0
+// dry the code

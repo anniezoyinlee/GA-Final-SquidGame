@@ -44,5 +44,4 @@ const Timer = ({min, sec, setMin, setSec}) => {
 
 export default Timer;
 
-
 // numbers have difference spacing when counting down, need to find a way to fix it

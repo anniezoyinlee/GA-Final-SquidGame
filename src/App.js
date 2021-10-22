@@ -10,14 +10,14 @@ function App() {
 	const [life, setLife] = useState(456)
 	const lifeValue = useMemo(() => ({life, setLife}), [life, setLife])
 
-return (
-	<div className='window'>
-			{/* Setting route to each pages */}
-			<Route path="/game" component={Game}/>
-			<Route exact path="/rank" component={Rank}/>
-			<Route exact path="/" component={Home}/>
-	</div>
-);
+	return (
+		<div className='window'>
+				{/* Setting route to each pages */}
+				<Route path="/game" component={Game}/>
+				<Route exact path="/rank" component={Rank}/>
+				<Route exact path="/" component={Home}/>
+		</div>
+	);
 }
 
 export default App;

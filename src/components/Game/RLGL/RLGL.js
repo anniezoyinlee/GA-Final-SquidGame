@@ -187,6 +187,6 @@ function RLGL() {
   
 export default RLGL;
 
-// timer go 0 finish the game
-// when the game is over, life go down by the amount of players didn't pass endline * 10
+// timer goes 0 finish the game
+// Life goes down by the amount of players didn't pass endline * 10 when the timer goes 0
 // dry the code

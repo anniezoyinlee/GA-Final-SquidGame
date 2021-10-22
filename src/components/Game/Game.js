@@ -98,17 +98,6 @@ function Game() {
                 <Link to="/">Quit</Link>
               </main>
             } 
-            {/* {levelDone ?
-            <main className='buttons'>
-              <Route path='/game/rlgl' render={() => <Link to="/game/dalgona">Next</Link> } />
-              <Route path='/game/dalgona' render={() => <Link to="/game/tow">Next</Link> } />
-              <Route path='/game/tow' render={() => <Link to="/game/marbles">Next</Link> } />
-              <Route path='/game/marbles' render={() => <Link to="/game/tgss">Next</Link> } />
-              <Route path='/game/tgss' render={() => <Link to="/">Next</Link> } />
-            </main>
-            :
-            null
-            } */}
           </div>
         }
       </RankContext.Provider>
