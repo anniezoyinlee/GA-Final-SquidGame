@@ -62,6 +62,7 @@ function AddRank() {
 
   return (
     <div className="addrank">
+      <Link onClick={() => hideRank()} to="/">Home</Link>
       <h1>Rank</h1>
       <div className="rankContent">
         <form onSubmit={onSubmit}>
@@ -71,23 +72,33 @@ function AddRank() {
             <input type='text' value={name} onChange={e => setName(e.currentTarget.value)}></input>
             <p>Your Score: {life}</p>
           </div>
-          <button onClick={(e) => e.currentTarget.style.display = 'none'}>Add Rank</button>
+          <button onClick={(e) => 
+            {
+              console.log(life)
+              setScore(life)
+              e.currentTarget.style.display = 'none'
+            }}>Add Rank</button>
         </form>
 
         <div className='leaderboard'>
           <ol>
-            {lives.map((data) => 
-            <li key={data.id}>
+            <li>
               <div className='name-entry'>
-                { data.name }
-                <span> { life }</span>
+                <h4>Name</h4>
+                <h4>Life</h4>
+              </div>
+            </li>
+            {lives.map((life) => 
+            <li key={life.id}>
+              <div className='name-entry'>
+                <span>{life.name}</span>
+                <span>{life.score}</span>
               </div>
             </li>
             )}
           </ol>
         </div>
       </div>
-      <Link onClick={() => hideRank()} to="/">Home</Link>
     </div>
   );
 }

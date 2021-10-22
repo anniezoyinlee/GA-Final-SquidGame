@@ -33,17 +33,23 @@ function Rank(  ) {
  
   return (
     <div className="rank">
-      <button onClick={() => history.goBack()}>Go Back</button>
+      <button className='goBackBtn' onClick={() => history.goBack()}>Go Back</button>
 
       <div className='leaderboard'>
        
         <h1>Rank</h1>
         <ol>
+          <li>
+            <div className='name-entry'>
+              <h4>Name</h4>
+              <h4>Life</h4>
+            </div>
+          </li>
           {lives.map((life) => 
           <li key={life.id}>
             <div className='name-entry'>
-              {life.name}
-              <span> {life.score}</span>
+              <span>{life.name}</span>
+              <span>{life.score}</span>
             </div>
           </li>
           )}

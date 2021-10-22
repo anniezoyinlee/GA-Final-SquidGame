@@ -1,31 +1,38 @@
 /* Rank */
 .rank {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   font-size: 2vw;
 }
 
-.rank button {
+.goBackBtn {
   position: absolute;
   left: 0;
 }
 
 .leaderboard {
-  position: absolute;
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
-  margin: 5%;
-  text-align: center;
+  align-items: center;
 }
 
-.leaderboard h1 {
-  margin-bottom: 0;
+.rank h1 {
+  color: #ff2277;
+  margin: 5% auto 0 auto;
 }
 
-.leaderboard ol {
+.rank ol {
+  width: 50%;
   list-style-type: none;
-  text-align: left;
-  margin: 1% auto;
+  margin: 2% 0;
+  padding: 0;
+}
+
+.rank h4 {
+  margin: 0;
+}
+
+.rank .name-entry {
+  display: flex;
+  justify-content: space-between;
 }
