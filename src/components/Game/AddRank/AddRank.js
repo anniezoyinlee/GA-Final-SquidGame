@@ -6,7 +6,12 @@ import firebase from '../../../firebase'
 import './AddRank.css';
 
 // reference: https://www.youtube.com/watch?v=rSgbYCdc4G0
-function useLives() {
+const SORT_OPTIONS = {
+  'SCORE_ASC': {column: 'score', direction: 'asc'},
+  'SCORE_DESC': {column: 'score', direction: 'desc'}
+}
+
+function useLives(sortBy) {
   const [lives, setLives] = useState([])
 
   // Map out the data from collection 'lives' from firebase
@@ -14,6 +19,7 @@ function useLives() {
     const unsubscribe = firebase
       .firestore()
       .collection('lives')
+      .orderBy(SORT_OPTIONS[sortBy].column, SORT_OPTIONS[sortBy].direction)
       .onSnapshot((snapshot) => {
         const newLives = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -24,13 +30,14 @@ function useLives() {
       })
     
     return () => unsubscribe()
-  }, [])
+  }, [sortBy])
 
   return lives
 }
 
 function AddRank() {
-  const lives = useLives();
+  const [sortBy, setSortBy] = useState('SCORE_DESC')
+  const lives = useLives(sortBy);
   const [name, setName] = useState('')
   const [score, setScore] = useState('')
   // Life count
@@ -104,5 +111,3 @@ function AddRank() {
 }
 
 export default AddRank;
-
-// last enter showing on the top

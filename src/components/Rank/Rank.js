@@ -4,7 +4,12 @@ import firebase from '../../firebase'
 import './Rank.css';
 
 // reference: https://www.youtube.com/watch?v=rSgbYCdc4G0
-function useLives() {
+const SORT_OPTIONS = {
+  'SCORE_ASC': {column: 'score', direction: 'asc'},
+  'SCORE_DESC': {column: 'score', direction: 'desc'}
+}
+
+function useLives(sortBy) {
   const [lives, setLives] = useState([])
 
   // Map out the data from collection 'lives' from firebase
@@ -12,6 +17,7 @@ function useLives() {
     const unsubscribe = firebase
       .firestore()
       .collection('lives')
+      .orderBy(SORT_OPTIONS[sortBy].column, SORT_OPTIONS[sortBy].direction)
       .onSnapshot((snapshot) => {
         const newLives = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -22,14 +28,15 @@ function useLives() {
       })
     
     return () => unsubscribe()
-  }, [])
+  }, [sortBy])
 
   return lives
 }
 
 function Rank(  ) {
+  const [sortBy, setSortBy] = useState('SCORE_DESC')
   const history = useHistory();
-  const lives = useLives();
+  const lives = useLives(sortBy);
  
   return (
     <div className="rank">
@@ -60,5 +67,3 @@ function Rank(  ) {
 }
 
 export default Rank;
-
-// last enter showing on the top
