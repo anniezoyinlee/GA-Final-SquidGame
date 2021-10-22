@@ -30,8 +30,6 @@ a:hover {
 .window {
   width: 70%;
   height: 40vw;
-  /* border: rgba(255, 0, 140, 0.905) .5vw dashed;
-  border-radius: 5px; */
   margin: 2% auto;
   padding: 1%;
 }
