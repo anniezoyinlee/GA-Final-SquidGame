@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext }  from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { LifeContext } from '../LifeContext';
-import { MinutesContext } from '../MinutesContext';
-import { SecondsContext } from '../SecondsContext';
+import { LifeContext } from '../../../context/LifeContext';
+import { MinutesContext } from '../../../context/MinutesContext';
+import { SecondsContext } from '../../../context/SecondsContext';
 import './RLGL.css';
 
 const lights = ['Red Light', 'Green Light']
@@ -190,6 +190,6 @@ function RLGL() {
   
 export default RLGL;
 
-// when the timer goes 0, no green pieces are clickable
-// when the game is over, do alive player count and show the next button
+// timer go 0 finish the game
+// when the game is over, life go down by the amount of players didn't pass endline * 10
 // dry the code

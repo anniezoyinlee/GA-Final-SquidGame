@@ -1,8 +1,8 @@
 import React, { useState, useContext }  from 'react'
 import { Link } from 'react-router-dom'
-import { LifeContext } from '../LifeContext';
-import { MinutesContext } from '../MinutesContext';
-import { SecondsContext } from '../SecondsContext';
+import { LifeContext } from '../../../context/LifeContext';
+import { MinutesContext } from '../../../context/MinutesContext';
+import { SecondsContext } from '../../../context/SecondsContext';
 import './Dalgona.css';
   
 function Dalgona() {

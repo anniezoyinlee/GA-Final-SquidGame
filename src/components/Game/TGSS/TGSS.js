@@ -1,5 +1,5 @@
 import React, { useState, useContext }  from 'react'
-import { LifeContext } from '../LifeContext';
+import { LifeContext } from '../../../context/LifeContext';
 import './TGSS.css';
 
 function TGSS() {

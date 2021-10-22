@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from 'react-router-dom'
-import './Rank.css';
+// import { LifeContext } from '../../context/LifeContext';
 import firebase from '../../firebase'
-import AddName from "../enter-rank-name";
+import './Rank.css';
 
 // reference: https://www.youtube.com/watch?v=rSgbYCdc4G0
 function useLives() {
   const [lives, setLives] = useState([])
 
+  // Map out the data from collection 'lives' from firebase
   useEffect(() => {
     const unsubscribe = firebase
       .firestore()
@@ -27,16 +28,46 @@ function useLives() {
   return lives
 }
 
-function Rank({score}) {
+function Rank(  ) {
   const history = useHistory();
   const lives = useLives();
+  const [name, setName] = useState('')
+  const [score, setScore] = useState('')
+  // Life count
+  // const {life, setLife} = useContext(LifeContext)
+
+  function onSubmit(e) {
+    e.preventDefault()
+
+    // Store data 'name' and 'score to the collection 'lives' in firebase
+    firebase
+      .firestore()
+      .collection('lives')
+      .add({
+        name,
+        score: parseInt(score)
+      })
+      .then(() => {
+        setName('')
+        setScore('')
+      })
+  }
 
   return (
     <div className="rank">
       <button onClick={() => history.goBack()}>Go Back</button>
 
       <div className='leaderboard'>
-        <AddName />
+        <form onSubmit={onSubmit}>
+          <div className='nameForm'>
+            <h4>Enter Your Name</h4>
+            <label>Your Name</label>
+            <input type='text' value={name} onChange={e => setName(e.currentTarget.value)}></input>
+            <label>Score</label>
+            {<input type='number'value={score} onChange={e => setScore(e.currentTarget.value)}></input>}
+          </div>
+          <button>Add Rank</button>
+        </form>
         <h1>Rank</h1>
         <ol>
           {lives.map((life) => 

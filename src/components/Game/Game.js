@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from "react";
 import { Route, Link } from 'react-router-dom'
-import { LifeContext } from "./LifeContext";
-import { MinutesContext } from "./MinutesContext";
-import { SecondsContext } from "./SecondsContext";
+import { LifeContext } from "../../context/LifeContext";
+import { MinutesContext } from "../../context/MinutesContext";
+import { SecondsContext } from "../../context/SecondsContext";
 
 // components
 import Caption from './Caption/Caption';
@@ -12,7 +12,6 @@ import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
 import Marbles from './Marbles/Marbles'
 import TGSS from './TGSS/TGSS'
-import Rank from '../Rank/Rank'
 
 // css
 import './Game.css'
@@ -100,7 +99,7 @@ function Game() {
             :
             null
             } */}
-              <Route exact path='/rank' component={Rank} />
+              
           </SecondsContext.Provider>
         </MinutesContext.Provider>
       </LifeContext.Provider>
@@ -109,8 +108,3 @@ function Game() {
 }
 
 export default Game;
-
-// timer go 0 finish the game
-// reach win condition finish the game
-// finish game show next button
-// new level timer reset
