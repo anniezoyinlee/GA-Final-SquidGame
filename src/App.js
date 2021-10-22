@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import Home from './components/Home/Home'
 import Rank from './components/Rank/Rank'
 import Game from './components/Game/Game'
-import './App.css';
+import './App.css'
 
 function App() {
 	// Life count
@@ -17,7 +17,7 @@ function App() {
 				<Route exact path="/rank" component={Rank}/>
 				<Route exact path="/" component={Home}/>
 		</div>
-	);
+	)
 }
 
-export default App;
+export default App

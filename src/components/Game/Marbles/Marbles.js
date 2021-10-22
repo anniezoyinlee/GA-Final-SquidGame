@@ -1,12 +1,12 @@
 import React, { useState, useContext }  from 'react'
-import { LifeContext } from '../../../context/LifeContext';
-import './Marbles.css';
+import { LifeContext } from '../../../context/LifeContext'
+import './Marbles.css'
   
 function Marbles() {
-  const {life, setLife} = useContext(LifeContext)
-  const [clicked, setClicked] = useState(false)
-  const [marbles, setMarbles] = useState(10)
-  const marbleAmount = Math.floor(1 + Math.random() * 9)
+  const { life, setLife } = useContext(LifeContext)
+  const [ clicked, setClicked ] = useState(false)
+  const [ marbles, setMarbles ] = useState(10)
+  const marbleAmount = Math.floor( 1 + Math.random() * 9 )
 
   // if (clicked === true) {
   //   const buttons = document.querySelectorAll('.guessBtn')
@@ -28,7 +28,7 @@ function Marbles() {
     }
     setTimeout(() => {
       setClicked(false)
-    }, 5000);
+    }, 5000)
   }
 
   const oddClicked = () => {
@@ -42,7 +42,7 @@ function Marbles() {
     }
     setTimeout(() => {
       setClicked(false)
-    }, 5000);
+    }, 5000)
   }
 
   return (
@@ -64,10 +64,10 @@ function Marbles() {
         <button onClick={() => oddClicked()}><h1>Odd</h1></button>
       </div>
     </div>
-  );
+  )
 }
   
-export default Marbles;
+export default Marbles
 
 // fix random number
 // have a random number in enemy's hand

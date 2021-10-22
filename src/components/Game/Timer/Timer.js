@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './Timer.css';
+import './Timer.css'
 
 // reference: https://www.codegrepper.com/code-examples/javascript/react+countdown+timer+minutes+seconds
 const Timer = ({min, sec, setMin, setSec}) => {
@@ -7,21 +7,21 @@ const Timer = ({min, sec, setMin, setSec}) => {
   useEffect(()=>{
     let myInterval = setInterval(() => {
       if (sec > 0) {
-        setSec(sec - 1);
+        setSec(sec - 1)
       } 
       if (sec === 0) {
         if (min === 0) {
           clearInterval(myInterval)
         } else {
-          setMin(min - 1);
-          setSec(59);
+          setMin(min - 1)
+          setSec(59)
         }
       } 
     }, 1000)
     return ()=> {
-      clearInterval(myInterval);
-    };
-  });
+      clearInterval(myInterval)
+    }
+  })
 
   return (
     <div className='pinkGuy'>
@@ -42,6 +42,6 @@ const Timer = ({min, sec, setMin, setSec}) => {
   )
 }
 
-export default Timer;
+export default Timer
 
 // numbers have difference spacing when counting down, need to find a way to fix it

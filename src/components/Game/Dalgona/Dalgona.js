@@ -1,32 +1,32 @@
 import React, { useState, useContext }  from 'react'
 import { Link } from 'react-router-dom'
-import { LifeContext } from '../../../context/LifeContext';
-import { MinutesContext } from '../../../context/MinutesContext';
-import { SecondsContext } from '../../../context/SecondsContext';
-import { RankContext } from '../../../context/RankContext';
-import './Dalgona.css';
+import { LifeContext } from '../../../context/LifeContext'
+import { MinutesContext } from '../../../context/MinutesContext'
+import { SecondsContext } from '../../../context/SecondsContext'
+import { RankContext } from '../../../context/RankContext'
+import './Dalgona.css'
   
 function Dalgona() {
   // Life count
-  const {life, setLife} = useContext(LifeContext)
+  const { life, setLife } = useContext(LifeContext)
   // Timer
-  const {minutes, setMinutes} = useContext(MinutesContext)
-  const {seconds, setSeconds} = useContext(SecondsContext)
+  const { minutes, setMinutes } = useContext(MinutesContext)
+  const { seconds, setSeconds } = useContext(SecondsContext)
   // Lines on candy that has been clicked
-  const [clickedPiece, setClickedPiece] = useState([])
+  const [ clickedPiece, setClickedPiece ] = useState([])
 
   // show rank
-  const {rank, setRank} = useContext(RankContext)
+  const { rank, setRank } = useContext(RankContext)
 
   function showRank() {
     setRank(true)
   }
 
   const clicked = (e) => {
-    e.stopPropagation();
-    setClickedPiece(arr => [...arr, `${arr.length}`]);
-    e.currentTarget.style.opacity = 4;
-    e.currentTarget.style.pointerEvents = 'none';
+    e.stopPropagation()
+    setClickedPiece(arr => [...arr, `${arr.length}`])
+    e.currentTarget.style.opacity = 4
+    e.currentTarget.style.pointerEvents = 'none'
     checkWin()
   }
 
@@ -50,10 +50,8 @@ function Dalgona() {
   // Check if level is completed
   const checkWin = () => {
     const slices = document.querySelectorAll('.slice')
-    console.log(slices.length, clickedPiece.length)
     // some how the first slice clicked doesn't go to clickedpiece array
     if (clickedPiece.length >= slices.length - 1) {
-      console.log('game over')
       handleLevelDone()
     }
   }
@@ -63,11 +61,15 @@ function Dalgona() {
     {start ?
       <div>
         {levelDone ?
-          <main className='buttons'>
-            <Link onClick={() => showRank()}  className='rankBtn' to="/game/addrank">
-              Rank
-            </Link> 
-          </main>
+          <div>
+            <main className='buttons'>
+              <Link onClick={ () => showRank() }  className='rankBtn' to="/game/addrank">
+                You Win
+              </Link> 
+            </main>
+
+            <p>More games will come out soon</p>
+          </div>
           :
           <div className="dalgona">
             <div className='candy' onClick={(e) => {
@@ -116,15 +118,15 @@ function Dalgona() {
       </div>
       :
       <main className='buttons'>
-        <button className='playBtn' onClick={()=>handleStart()}>Play</button>
+        <button className='playBtn' onClick={ ()=>handleStart() }>Play</button>
         <Link to="/">Quit</Link>
       </main>
     }
     </div>
-  );
+  )
 }
   
-export default Dalgona;
+export default Dalgona
 
 // timer goes 0 finish the game
 // Life goes down by the pieces not clicked * 10 when timer goes 0

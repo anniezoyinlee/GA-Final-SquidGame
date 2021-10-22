@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 function Home() {
+
   return (
     <div className='home'>
       <div className='landingBtn'>
@@ -10,7 +11,7 @@ function Home() {
         <Link to="/rank">Rank</Link>
       </div>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

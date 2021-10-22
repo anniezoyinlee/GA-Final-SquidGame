@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 import { useHistory } from 'react-router-dom'
 import firebase from '../../firebase'
-import './Rank.css';
+import './Rank.css'
 
 // reference: https://www.youtube.com/watch?v=rSgbYCdc4G0
 const SORT_OPTIONS = {
@@ -35,8 +35,8 @@ function useLives(sortBy) {
 
 function Rank(  ) {
   const [sortBy, setSortBy] = useState('SCORE_DESC')
-  const history = useHistory();
-  const lives = useLives(sortBy);
+  const history = useHistory()
+  const lives = useLives(sortBy)
  
   return (
     <div className="rank">
@@ -63,7 +63,7 @@ function Rank(  ) {
         </ol>
       </div>
     </div>
-  );
+  )
 }
 
-export default Rank;
+export default Rank

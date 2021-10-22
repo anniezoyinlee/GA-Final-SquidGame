@@ -1,4 +1,4 @@
-import React, { useState, useContext }  from 'react'
+import React, { useState, useContext }  from 'react';
 import { LifeContext } from '../../../context/LifeContext';
 import './Tow.css';
 

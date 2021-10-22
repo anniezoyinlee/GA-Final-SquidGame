@@ -1,6 +1,6 @@
 import React, { useState, useContext }  from 'react'
-import { LifeContext } from '../../../context/LifeContext';
-import './TGSS.css';
+import { LifeContext } from '../../../context/LifeContext'
+import './TGSS.css'
 
 function TGSS() {
   const {life, setLife} = useContext(LifeContext)
@@ -36,8 +36,8 @@ function TGSS() {
         </div>
       </div>
     </div>
-  );
+  )
 }
   
-export default TGSS;
+export default TGSS
   

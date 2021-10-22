@@ -1,13 +1,13 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react"
 import { Route, Link } from 'react-router-dom'
-import { LifeContext } from "../../context/LifeContext";
-import { MinutesContext } from "../../context/MinutesContext";
-import { SecondsContext } from "../../context/SecondsContext";
-import { RankContext } from "../../context/RankContext";
+import { LifeContext } from "../../context/LifeContext"
+import { MinutesContext } from "../../context/MinutesContext"
+import { SecondsContext } from "../../context/SecondsContext"
+import { RankContext } from "../../context/RankContext"
 
 // components
-import Caption from './Caption/Caption';
-import Timer from './Timer/Timer';
+import Caption from './Caption/Caption'
+import Timer from './Timer/Timer'
 import RLGL from './RLGL/RLGL'
 import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
@@ -99,7 +99,7 @@ function Game() {
       </MinutesContext.Provider>
       </LifeContext.Provider>
     </div>
-  );
+  )
 }
 
-export default Game;
+export default Game

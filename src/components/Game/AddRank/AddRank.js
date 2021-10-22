@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react"
 import { Link } from 'react-router-dom'
-import { LifeContext } from '../../../context/LifeContext';
-import { RankContext } from '../../../context/RankContext';
+import { LifeContext } from '../../../context/LifeContext'
+import { RankContext } from '../../../context/RankContext'
 import firebase from '../../../firebase'
-import './AddRank.css';
+import './AddRank.css'
 
 // reference: https://www.youtube.com/watch?v=rSgbYCdc4G0
 const SORT_OPTIONS = {
@@ -37,7 +37,7 @@ function useLives(sortBy) {
 
 function AddRank() {
   const [sortBy, setSortBy] = useState('SCORE_DESC')
-  const lives = useLives(sortBy);
+  const lives = useLives(sortBy)
   const [name, setName] = useState('')
   const [score, setScore] = useState('')
   // Life count
@@ -72,12 +72,12 @@ function AddRank() {
       <Link onClick={() => hideRank()} to="/">Home</Link>
       <h1>Rank</h1>
       <div className="rankContent">
-        <form onSubmit={onSubmit}>
+        <form onSubmit={ onSubmit }>
           <div className='nameForm'>
             <h4>Enter Your Name</h4>
             <label>Your Name: </label>
-            <input type='text' value={name} onChange={e => setName(e.currentTarget.value)}></input>
-            <p>Life: {life}</p>
+            <input type='text' value={ name } onChange={ e => setName(e.currentTarget.value) }></input>
+            <p>Life: { life }</p>
           </div>
           <button onClick={(e) => 
             {
@@ -98,8 +98,8 @@ function AddRank() {
             {lives.map((life) => 
             <li key={life.id}>
               <div className='name-entry'>
-                <span>{life.name}</span>
-                <span>{life.score}</span>
+                <span>{ life.name }</span>
+                <span>{ life.score }</span>
               </div>
             </li>
             )}
@@ -107,7 +107,7 @@ function AddRank() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default AddRank;
+export default AddRank
