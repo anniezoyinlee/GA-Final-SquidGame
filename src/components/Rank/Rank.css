@@ -17,4 +17,15 @@
   display: flex;
   flex-flow: column wrap;
   margin: 5%;
+  text-align: center;
+}
+
+.leaderboard h1 {
+  margin-bottom: 0;
+}
+
+.leaderboard ol {
+  list-style-type: none;
+  text-align: left;
+  margin: 1% auto;
 }

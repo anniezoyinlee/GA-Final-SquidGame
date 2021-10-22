@@ -130,7 +130,7 @@ function RLGL() {
     <div>
       {levelDone ?
         <main className='buttons'>
-          <Link to="/game/dalgona">Next Game</Link> 
+          <Link className='nextBtn' to="/game/dalgona">Next Game</Link> 
         </main>
         :
         <div className="rlgl">

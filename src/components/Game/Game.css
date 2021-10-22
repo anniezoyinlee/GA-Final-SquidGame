@@ -41,6 +41,11 @@
   margin: 5%;
 }
 
+a.nextBtn,
+a.rankBtn {
+  text-shadow: -.03em 0 #ff2277, 0 .03em #ff2277, .03em 0 #ff2277, 0 -.03em #ff2277;
+}
+
 h1.life {
   position: absolute;
   top: 0;

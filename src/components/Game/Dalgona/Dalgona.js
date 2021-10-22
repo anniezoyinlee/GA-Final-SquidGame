@@ -56,7 +56,7 @@ function Dalgona() {
       <div>
         {levelDone ?
           <main className='buttons'>
-            <Link to="/rank">Rank</Link> 
+            <Link className='rankBtn' to="/rank">Rank</Link> 
           </main>
           :
           <div className="dalgona">
