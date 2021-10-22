@@ -25,6 +25,9 @@ React(New Technology: React Context)
 ### database
 Firebase(New Technology)
 
+### deployment
+Heroku
+
 ## Backend models and their properties
 Rank
 - Username
