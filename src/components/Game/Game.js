@@ -12,6 +12,7 @@ import Dalgona from './Dalgona/Dalgona'
 import ToW from './ToW/ToW'
 import Marbles from './Marbles/Marbles'
 import TGSS from './TGSS/TGSS'
+import Rank from '../Rank/Rank'
 
 // css
 import './Game.css'
@@ -99,6 +100,7 @@ function Game() {
             :
             null
             } */}
+              <Route exact path='/rank' component={Rank} />
           </SecondsContext.Provider>
         </MinutesContext.Provider>
       </LifeContext.Provider>

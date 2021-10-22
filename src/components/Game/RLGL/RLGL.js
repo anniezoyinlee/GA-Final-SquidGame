@@ -54,11 +54,16 @@ function RLGL() {
   const [playerPass, setPlayerPass] = useState(0)
   const players = document.querySelectorAll('.player')
 
+  // Start button, only show before a game starts
+  const [start, setStart] = useState(true)
+
   // Next button, only show after a game is completed
   const [levelDone, setLevelDone] = useState(false)
 
   function handleLevelDone() {
     setLevelDone(!levelDone)
+    setMinutes(0)
+    setSeconds(0)
   }
 
   // Check if level is completed
@@ -66,11 +71,9 @@ function RLGL() {
     // console.log(playerPass, players.length)
     // Somehow playerPass doesn't update after the first piece pass endLine
     if (playerPass + 1 >= players.length && players.length !== 0) {
-      handleLevelDone()
       //Clearing interval
       stopInterval()
-      setMinutes(0)
-      setSeconds(0)
+      handleLevelDone()
     }
   }
 
@@ -88,7 +91,7 @@ function RLGL() {
     };
   }
 
-  let playerSpeed = 2 + Math.random();
+  let playerSpeed = 12 + Math.random();
   function movePlayerRight001(e) {
     let endLine = window.scrollX + document.querySelector('.ground').getBoundingClientRect().right
     setOffsetRight001(offsetRight001 + playerSpeed);
@@ -127,7 +130,7 @@ function RLGL() {
     <div>
       {levelDone ?
         <main className='buttons'>
-          <Link to="/game/dalgona">Next</Link> 
+          <Link to="/game/dalgona">Next Game</Link> 
         </main>
         :
         <div className="rlgl">
